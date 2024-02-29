@@ -34,7 +34,7 @@
                 <!-- New Profile Photo Preview -->
                 <div class="mt-2" x-show="photoPreview" style="display: none;">
                     <span class="block rounded-full w-20 h-20 bg-cover bg-no-repeat bg-center"
-                          x-bind:style="'background-image: url(\'' + photoPreview + '\');'">
+                        x-bind:style="'background-image: url(\'' + photoPreview + '\');'">
                     </span>
                 </div>
 
@@ -59,6 +59,13 @@
             <x-input-error for="name" class="mt-2" />
         </div>
 
+        <!-- Phone -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="phone" value="{{ __('Phone') }}" />
+            <x-input id="phone" type="text" class="mt-1 block w-full" wire:model="state.phone" autocomplete="phone" />
+            <x-input-error for="phone" class="mt-2" />
+        </div>
+        
         <!-- Email -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="email" value="{{ __('Email') }}" />
