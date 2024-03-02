@@ -52,11 +52,25 @@
             </div>
         @endif
 
+        <!-- Surname -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="surname" value="{{ __('Фамилия') }}" />
+            <x-input id="surname" type="text" class="mt-1 block w-full" wire:model="state.surname" required autocomplete="surname" />
+            <x-input-error for="surname" class="mt-2" />
+        </div>
+
         <!-- Name -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="name" value="{{ __('Имя') }}" />
             <x-input id="name" type="text" class="mt-1 block w-full" wire:model="state.name" required autocomplete="name" />
             <x-input-error for="name" class="mt-2" />
+        </div>
+
+        <!-- Patronymic -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="patronymic" value="{{ __('Отчество') }}" />
+            <x-input id="patronymic" type="text" class="mt-1 block w-full" wire:model="state.patronymic" required autocomplete="patronymic" />
+            <x-input-error for="patronymic" class="mt-2" />
         </div>
 
         <!-- Phone -->
