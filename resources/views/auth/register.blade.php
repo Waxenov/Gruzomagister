@@ -10,8 +10,18 @@
             @csrf
 
             <div>
+                <x-label for="surname" value="{{ __('Фамилия') }}" />
+                <x-input id="surname" class="block mt-1 w-full" type="text" name="surname" :value="old('surname')" required autofocus autocomplete="surname" />
+            </div>
+
+            <div>
                 <x-label for="name" value="{{ __('Имя') }}" />
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+            </div>
+
+            <div>
+                <x-label for="patronymic" value="{{ __('Отчество') }}" />
+                <x-input id="patronymic" class="block mt-1 w-full" type="text" name="patronymic" :value="old('patronymic')" required autofocus autocomplete="patronymic" />
             </div>
 
             <div class="mt-4">
