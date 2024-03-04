@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\FormSaveController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,7 +54,7 @@ Route::middleware([
         return view('carriers');
     })->name('carriers');
 
-    Route::get('/orders', function () {
+    Route::get('/orders',[FormSaveController::class, 'formsaves'], function () {
         return view('orders');
     })->name('orders');
 
