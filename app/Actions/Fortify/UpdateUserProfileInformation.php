@@ -52,7 +52,9 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
     protected function updateVerifiedUser(User $user, array $input): void
     {
         $user->forceFill([
+            'surname' => $input['surname'],
             'name' => $input['name'],
+            'patronymic' => $input['patronymic'],
             'email' => $input['email'],
             'email_verified_at' => null,
         ])->save();
