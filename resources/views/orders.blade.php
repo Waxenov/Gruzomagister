@@ -57,6 +57,9 @@
                             <th scope="col" class="px-6 py-3">
                                 Тип кузова
                             </th>
+                            <th scope="col" class="px-6 py-3 rounded-tr-[15px] bg-[#FF0015] text-white">
+                                Удалить
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -72,6 +75,13 @@
                             <td class="px-6 py-4 text-[#606060]"> {{ $data->load_place }} </td>
                             <td class="px-6 py-4 text-[#606060]"> {{ $data->unload_place }} </td>
                             <td class="px-6 py-4 text-[#606060]"> {{ $data->truck_type }} </td>
+                            <td class="px-6 py-4 text-[#FF5267]">
+                            <form action="{{ route('orders.destroy', $data->id) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                    <button type="submit" class="text-white bg-[#FF5267] font-black rounded-full text-sm px-7 py-2.5 text-center me-2 mb-2"> X </button>
+                                </form>
+                            </td>
                             
                         </tr>
                         @endforeach
