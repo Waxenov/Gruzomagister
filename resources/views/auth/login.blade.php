@@ -1,9 +1,7 @@
 <x-guest-layout>
     <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
-
+            <h1 class="flex justify-center text-2xl font-bold text-gray-900">{{ __('Вход в аккаунт') }}</h1>
+            <br>
         <x-validation-errors class="mb-4" />
 
         @if (session('status'))
@@ -17,12 +15,12 @@
 
             <div>
                 <x-label for="email" value="{{ __('Почта') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+                <x-input id="email" class="block mt-1 w-full bg-[#EBE5E5] text-[#876368]" placeholder="mail@mail.ru" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
             </div>
 
             <div class="mt-4">
                 <x-label for="password" value="{{ __('Пароль') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+                <x-input id="password" class="block mt-1 w-full bg-[#EBE5E5] text-[#876368]" placeholder="••••••••••" type="password" name="password" required autocomplete="current-password" />
             </div>
 
             <div class="block mt-4">
@@ -34,7 +32,7 @@
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF0015]" href="{{ route('password.request') }}">
                         {{ __('Забыли пароль?') }}
                     </a>
                 @endif

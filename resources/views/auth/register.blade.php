@@ -1,9 +1,8 @@
 <x-guest-layout>
     <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
-
+            <h1 class="flex justify-center text-2xl font-bold text-gray-900">{{ __('Создайте ваш аккаунт
+            в ГрузоМагистр') }}</h1>
+            <br>
         <x-validation-errors class="mb-4" />
 
         <form method="POST" action="{{ route('register') }}">
@@ -11,41 +10,41 @@
 
             <div>
                 <x-label for="surname" value="{{ __('Фамилия') }}" />
-                <x-input id="surname" class="block mt-1 w-full" type="text" name="surname" :value="old('surname')" required autofocus autocomplete="surname" />
+                <x-input id="surname" class="block mt-1 w-full bg-[#EBE5E5] text-[#876368]" placeholder="Иванов" type="text" name="surname" :value="old('surname')" required autofocus autocomplete="surname" />
             </div>
 
             <div>
                 <x-label for="name" value="{{ __('Имя') }}" />
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                <x-input id="name"  class="block mt-1 w-full bg-[#EBE5E5] text-[#876368]" placeholder="Иван" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
 
             <div>
                 <x-label for="patronymic" value="{{ __('Отчество') }}" />
-                <x-input id="patronymic" class="block mt-1 w-full" type="text" name="patronymic" :value="old('patronymic')" required autofocus autocomplete="patronymic" />
+                <x-input id="patronymic"  class="block mt-1 w-full bg-[#EBE5E5] text-[#876368]" placeholder="Иванович" type="text" name="patronymic" :value="old('patronymic')" required autofocus autocomplete="patronymic" />
             </div>
 
             <div class="mt-4">
                 <x-label for="phone" value="{{ __('Телефон') }}" />
-                <x-input id="phone" class="block mt-1 w-full" type="text" name="phone" :value="old('phone')" required autofocus autocomplete="phone" />
+                <x-input id="phone"  class="block mt-1 w-full bg-[#EBE5E5] text-[#876368]" placeholder="+7 123 456 78 90" type="tel" name="phone" :value="old('phone')" required autofocus autocomplete="phone" />
             </div>
 
 
             <div class="mt-4">
                 <x-label for="email" value="{{ __('Почта') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
+                <x-input id="email"  class="block mt-1 w-full bg-[#EBE5E5] text-[#876368]" placeholder="mail@mail.ru" type="email" name="email" :value="old('email')" required autocomplete="username" />
             </div>
 
             <div class="mt-4">
                 <x-label for="password" value="{{ __('Пароль') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+                <x-input id="password" class="block mt-1 w-full bg-[#EBE5E5] text-[#876368]" placeholder="••••••••••" type="password" name="password" required autocomplete="new-password" />
             </div>
 
             <div class="mt-4">
                 <x-label for="password_confirmation" value="{{ __('Подтвердите пароль') }}" />
-                <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
+                <x-input id="password_confirmation" class="block mt-1 w-full bg-[#EBE5E5] text-[#876368]" placeholder="••••••••••" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
 
-            @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
+
                 <div class="mt-4">
                     <x-label for="terms">
                         <div class="flex items-center">
@@ -53,17 +52,16 @@
 
                             <div class="ms-2">
                                 {!! __('Я соглашаюсь с :terms_of_service и :privacy_policy', [
-                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">'.__('Условия обслуживания').'</a>',
-                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">'.__('Политика конфиденциальности').'</a>',
+                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF0015]">'.__('Условия обслуживания').'</a>',
+                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF0015]">'.__('Политика конфиденциальности').'</a>',
                                 ]) !!}
                             </div>
                         </div>
                     </x-label>
                 </div>
-            @endif
 
             <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
+                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF0015]" href="{{ route('login') }}">
                     {{ __('Уже зарегистрированы?') }}
                 </a>
 

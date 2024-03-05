@@ -34,6 +34,7 @@ class Formloadcomponent extends Component
             'phone' => $user->phone,
         ]);
 
+        return redirect()->route('orders');
     }
     public function render()
     {

@@ -5,7 +5,7 @@
         </x-slot>
 
         <div class="text-center">
-            <h1 class="text-xl font-extrabold text-gray-900">{{ __('Извините, так нельзя') }}</h1>
+            <h1 class="text-xl font-bold text-gray-900">{{ __('Извините, так нельзя') }}</h1>
             <p class="mt-2 text-sm text-gray-600">{{ __('Вы находитесь в гостевом режиме.') }}</p>
         </div>
 
@@ -19,9 +19,12 @@
         </div>
 
         <div class="mt-4 flex justify-center">
-            <x-nav-link href="{{ route('register') }}">
-                {{ __('Зарегистрироваться') }}
-            </x-nav-link>
+        <x-nav-link href="{{ route('register') }}">
+            {{ __('Зарегистрироваться') }}
+        </x-nav-link>
+        <x-nav-link class="" href="{{ url()->previous() }}">
+        {{ __('Назад ') }}
+        </x-nav-link>
         </div>
 
     </x-authentication-card>

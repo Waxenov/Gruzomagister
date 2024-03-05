@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormSaveController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -61,4 +62,7 @@ Route::middleware([
     Route::get('/create', function () {
         return view('create');
     })->name('create');
+
+    Route::delete('/orders/{id}', [FormSaveController::class, 'destroy'])->name('orders.destroy');
+
 });

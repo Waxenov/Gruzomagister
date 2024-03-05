@@ -26,11 +26,11 @@
                     <input type="text" id="simple-search" class="block w-96 px-4 py-2.5 bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-[#FF0015] focus:border-[#FF0015] focus:outline-none" placeholder="Ищите и найдете">
                 </div>
             </div>
-            <div class="relative overflow-x-auto">
+            <div class="relative  overflow-x-auto ">
                 <table class="w-full  text-sm text-left rtl:text-right text-gray-500">
-                    <thead class="text-xs text-center text-gray-700 uppercase bg-[#ededed]">
+                    <thead class="text-xs  text-center text-gray-700 uppercase bg-[#ededed]">
                         <tr>
-                            <th scope="col" class="px-6 py-3 rounded-tl-[15px] bg-[#FF0015] text-white">
+                            <th scope="col" class="px-6 py-3 rounded-tl-[15px]  bg-[#FF0015] text-white">
                                 Номер
                             </th>
                             <th scope="col" class="px-6 py-3">
@@ -64,7 +64,7 @@
                     </thead>
                     <tbody>
                         @foreach ($formData as $data)
-                        <tr class="bg-[#ffffff] text-center border-b-2 border-b-[#EDE3E7]">
+                        <tr class="bg-[#ffffff] text-center  border-b-2 border-b-[#EDE3E7]">
                             
                             <td class="px-6 py-4 text-[#FF5267]">#{{ $data->id }} </td>
                             <td class="px-6 py-4 text-[#606060]"> {{ $data->created_at }} </td>

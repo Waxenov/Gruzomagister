@@ -1,15 +1,11 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Создать') }}
-        </h2>
-    </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+    <div class="py-12 flex justify-center">
+            <div class="bg-white w-fit px-10 overflow-hidden shadow-xl sm:rounded-lg">
+            <h2 class="font-semibold text-3xl text-gray-800 leading-tight py-5 text-start">
+            {{ __('Новый заказ') }}
+            </h2>
                 <livewire:formloadcomponent>
             </div>
-        </div>
     </div>
 </x-app-layout>
