@@ -11,7 +11,7 @@ class YourLoads extends Component
 
     public function __construct()
     {
-        $this->loads = formloadmodel::where('name', auth()->id())->get();
+        $this->loads = formloadmodel::where('phone', auth()->id())->get();
     }
 
     public function render()
