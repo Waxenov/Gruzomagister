@@ -15,7 +15,7 @@ class CreateNewUser implements CreatesNewUsers
     /**
      * Validate and create a newly registered user.
      *
-     * @param  array<string, string>  $input
+     * @param  array<string, mixed>  $input
      */
     public function create(array $input): User
     {
@@ -23,19 +23,30 @@ class CreateNewUser implements CreatesNewUsers
             'surname' => ['required', 'string', 'max:255'],
             'name' => ['required', 'string', 'max:255'],
             'patronymic' => ['required', 'string', 'max:255'],
+            'role' => ['required', 'string', 'max:255'],
             'phone' => ['required', 'string', 'min:10', 'max:15'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
+            'role' => ['required', 'string', 'in:client,carrier'],
         ])->validate();
 
-        return User::create([
+        $user = User::create([
             'surname' => $input['surname'],
             'patronymic' => $input['patronymic'],
             'name' => $input['name'],
+            'role' => $input['role'],
             'phone' => $input['phone'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
         ]);
+
+        if ($input['role'] === 'carrier') {
+            $user->assignRole('carrier');
+        } else {
+            $user->assignRole('client');
+        }
+
+        return $user;
     }
 }
