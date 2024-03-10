@@ -7,5 +7,5 @@
             </h2>
                 <livewire:formloadcomponent>
             </div>
-    </div>
+
 </x-app-layout>

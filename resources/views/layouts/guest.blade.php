@@ -4,8 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <link type="image/x-icon" rel="icon" href="/favicon.ico">
 
-        <title>{{ config('app.name', 'Грузомагистр') }}</title>
+        <title>{{ config('app.name', 'ГрузоМагистр') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -17,7 +18,8 @@
         <!-- Styles -->
         @livewireStyles
     </head>
-    <body class="font-sans antialiased ">
+    <body class="font-sans antialiased">
+
         <div class="font-sans text-gray-900 antialiased">
             {{ $slot }}
         </div>
@@ -28,17 +30,17 @@
         @livewireScripts
         
 
-            <footer class="bg-white flex bottom-0 w-full ">
+        <footer class="bg-white dark:bg-[#202020] flex bottom-0 w-full">
                 <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                     <div class="md:flex md:justify-between">
                     <div class="mb-6 md:mb-0">
                         <a href="http://gruzomagister/" class="flex items-center">
-                            <span class="self-center text-2xl font-semibold whitespace-nowrap">Грузомагистр</span>
+                            <span class="self-center text-2xl dark:text-white font-semibold whitespace-nowrap">ГрузоМагистр</span>
                         </a>
                     </div>
                     <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                         <div>
-                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Разработка</h2>
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white uppercase">Разработка</h2>
                             <ul class="text-gray-500 font-medium">                                
                                 <li class="mb-4">
                                     <a href="https://jetstream.laravel.com/introduction.html" class="hover:underline">Laravel Jetstream</a>
@@ -52,7 +54,7 @@
                             </ul>
                         </div>
                         <div>
-                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Создатель</h2>
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white uppercase">Создатель</h2>
                             <ul class="text-gray-500 font-medium">
                                 <li class="mb-4">
                                     <a href="https://github.com/Waxenov/Gruzomagister" class="hover:underline ">Github</a>
@@ -60,7 +62,7 @@
                             </ul>
                         </div>
                         <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Правила</h2>
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white uppercase">Правила</h2>
                             <ul class="text-gray-500 font-medium">
                             <li class="mb-4">
                                 {!! __(' :privacy_policy', [
@@ -85,6 +87,6 @@
                     </div>
                 </div>
                 </div>
-            </footer> 
+            </footer>
     </body>
 </html>

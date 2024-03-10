@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <title>{{ config('app.name', 'Грузомагистр') }}</title>
+        <link type="image/x-icon" rel="icon" href="/favicon.ico">
+        
+        <title>{{ config('app.name', 'ГрузоМагистр') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -17,23 +19,23 @@
         <!-- Styles -->
         @livewireStyles
     </head>
-    <body class="font-sans antialiased bg-[#EDE3E3]">
+    <body class="min-w-min max-w-full font-sans antialiased bg-[#ece2e3] dark:bg-[#232323]">
         <x-banner />
 
-        <div class="bg-gray-100 sticky top-0 z-10">
+        <div class="w-full bg-gray-100">
             @livewire('navigation-menu')
 
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 ">
+                    <div class="w-full mx-auto py-6 px-4 sm:px-6 lg:px-8 ">
                         {{ $header }}
                     </div>
                 </header>
             @endif
 
             <!-- Page Content -->
-            <main>
+            <main class="my-20">
                 {{ $slot }}
             </main>
         </div>
@@ -43,17 +45,17 @@
         @livewireScripts
         
 
-            <footer class="bg-white flex bottom-0 w-full ">
+            <footer class="bg-white dark:bg-[#202020] flex bottom-0 w-full top-0 z-0">
                 <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                     <div class="md:flex md:justify-between">
                     <div class="mb-6 md:mb-0">
                         <a href="http://gruzomagister/" class="flex items-center">
-                            <span class="self-center text-2xl font-semibold whitespace-nowrap">ГрузоМагистр</span>
+                            <span class="self-center text-2xl dark:text-white font-semibold whitespace-nowrap">ГрузоМагистр</span>
                         </a>
                     </div>
                     <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                         <div>
-                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Разработка</h2>
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white uppercase">Разработка</h2>
                             <ul class="text-gray-500 font-medium">                                
                                 <li class="mb-4">
                                     <a href="https://jetstream.laravel.com/introduction.html" class="hover:underline">Laravel Jetstream</a>
@@ -67,7 +69,7 @@
                             </ul>
                         </div>
                         <div>
-                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Создатель</h2>
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white uppercase">Создатель</h2>
                             <ul class="text-gray-500 font-medium">
                                 <li class="mb-4">
                                     <a href="https://github.com/Waxenov/Gruzomagister" class="hover:underline ">Github</a>
@@ -75,7 +77,7 @@
                             </ul>
                         </div>
                         <div>
-                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Правила</h2>
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white uppercase">Правила</h2>
                             <ul class="text-gray-500 font-medium">
                             <li class="mb-4">
                                 {!! __(' :privacy_policy', [

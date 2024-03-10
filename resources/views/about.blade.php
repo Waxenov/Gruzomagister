@@ -9,13 +9,12 @@
                     </h2>
                 </div>
                 <div class="md:ml-10 p-10">
-                    <p class="font-normal text-xl text-gray-600 leading-tight mt-4">
+                    <p class="font-normal text-xl text-gray-600 leading-tight">
                     Более трёх месяцев компания ГрузоМагистр является одним из лучших  поставщиков логистических услуг по Омской области. У нас есть опыт и экспертные знания, чтобы обеспечить безопасную и эффективную транспортировку ваших грузов. При небольшой сети партнеров, мы предлагаем широкий спектр услуг для наших клиентов.
                     </p>
                     <br>
-                    <button type="button" class="flex text-white bg-[#FF5267] hover:bg-[#FF0015] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-24 py-2.5 text-center">@if(Auth::check())<a href="{{ route('create') }}">Начать</a>@else<a href="{{ route('register') }}">Начать</a>@endif</button>
+                    <button type="button" class="flex text-white bg-[#FF0015] hover:bg-[#FF5267] focus:ring-4 focus:outline-none font-medium rounded-lg text-xl w-full sm:w-auto px-24 py-2.5 text-center">@if(Auth::check())<a href="{{ route('create') }}">Начать</a>@else<a href="{{ route('register') }}">Начать</a>@endif</button>
                 </div>
-
             </div>
         </div>
     </div>
