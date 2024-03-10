@@ -1,47 +1,53 @@
 <x-guest-layout>
     <x-authentication-card>
-            <h1 class="flex justify-center text-2xl font-bold text-gray-900">{{ __('Создайте ваш аккаунт
+            <h1 class="flex justify-center text-2xl font-bold text-gray-900">{{ __('Создайте свой аккаунт
             в ГрузоМагистр') }}</h1>
             <br>
         <x-validation-errors class="mb-4" />
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
-
+            <div>
+                <x-label for="role" value="{{ __('Роль') }}" />
+                <select id="role" name="role" class=" text-gray-900 bg-[#f7f7f7] border border-gray-300 text-sm rounded-lg focus:ring-[#FF0015] focus:border-[#FF0015] block w-full p-2.5" required>
+                    <option value="client">{{ __('Заказчик') }}</option>
+                    <option value="carrier">{{ __('Перевозчик') }}</option>
+                </select>
+            </div>
             <div>
                 <x-label for="surname" value="{{ __('Фамилия') }}" />
-                <x-input id="surname" class="block mt-1 w-full bg-[#EBE5E5] text-[#876368]" placeholder="Иванов" type="text" name="surname" :value="old('surname')" required autofocus autocomplete="surname" />
+                <x-input id="surname" class="block mt-1 w-full  text-[#876368]" type="text" name="surname" :value="old('surname')" required autocomplete="surname" />
             </div>
 
             <div>
                 <x-label for="name" value="{{ __('Имя') }}" />
-                <x-input id="name"  class="block mt-1 w-full bg-[#EBE5E5] text-[#876368]" placeholder="Иван" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                <x-input id="name"  class="block mt-1 w-full  text-[#876368]" type="text" name="name" :value="old('name')" required autocomplete="name" />
             </div>
 
             <div>
                 <x-label for="patronymic" value="{{ __('Отчество') }}" />
-                <x-input id="patronymic"  class="block mt-1 w-full bg-[#EBE5E5] text-[#876368]" placeholder="Иванович" type="text" name="patronymic" :value="old('patronymic')" required autofocus autocomplete="patronymic" />
+                <x-input id="patronymic"  class="block mt-1 w-full  text-[#876368]" type="text" name="patronymic" :value="old('patronymic')" required  autocomplete="patronymic" />
             </div>
 
             <div class="mt-4">
                 <x-label for="phone" value="{{ __('Телефон') }}" />
-                <x-input id="phone"  class="block mt-1 w-full bg-[#EBE5E5] text-[#876368]" placeholder="+7 123 456 78 90" type="tel" name="phone" :value="old('phone')" required autofocus autocomplete="phone" />
+                <x-input id="phone"  class="block mt-1 w-full  text-[#876368]" placeholder="+7 123 456 78 90" type="tel" name="phone" :value="old('phone')" required  autocomplete="phone" />
             </div>
 
 
             <div class="mt-4">
-                <x-label for="email" value="{{ __('Почта') }}" />
-                <x-input id="email"  class="block mt-1 w-full bg-[#EBE5E5] text-[#876368]" placeholder="mail@mail.ru" type="email" name="email" :value="old('email')" required autocomplete="username" />
+                <x-label for="email" value="{{ __('Электропочта') }}" />
+                <x-input id="email"  class="block mt-1 w-full  text-[#876368]" placeholder="электронная почта" type="email" name="email" :value="old('email')" required autocomplete="username" />
             </div>
 
             <div class="mt-4">
                 <x-label for="password" value="{{ __('Пароль') }}" />
-                <x-input id="password" class="block mt-1 w-full bg-[#EBE5E5] text-[#876368]" placeholder="••••••••••" type="password" name="password" required autocomplete="new-password" />
+                <x-input id="password" class="block mt-1 w-full  text-[#876368]" placeholder="секретные символы" type="password" name="password" required autocomplete="new-password" />
             </div>
 
             <div class="mt-4">
                 <x-label for="password_confirmation" value="{{ __('Подтвердите пароль') }}" />
-                <x-input id="password_confirmation" class="block mt-1 w-full bg-[#EBE5E5] text-[#876368]" placeholder="••••••••••" type="password" name="password_confirmation" required autocomplete="new-password" />
+                <x-input id="password_confirmation" class="block mt-1 w-full  text-[#876368]" placeholder="повторите секретные символы" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
 
 

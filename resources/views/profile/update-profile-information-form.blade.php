@@ -5,6 +5,7 @@
 
     <x-slot name="description">
         {{ __('Обновите данные вашего аккаунта.') }}
+
     </x-slot>
 
     <x-slot name="form">
@@ -51,7 +52,8 @@
                 <x-input-error for="photo" class="mt-2" />
             </div>
         @endif
-
+        
+        
         <!-- Surname -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="surname" value="{{ __('Фамилия') }}" />
