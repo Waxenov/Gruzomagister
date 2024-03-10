@@ -12,6 +12,7 @@ export default {
     ],
 
     theme: {
+        darkMode: 'media',
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
@@ -21,3 +22,4 @@ export default {
 
     plugins: [forms, typography],
 };
+

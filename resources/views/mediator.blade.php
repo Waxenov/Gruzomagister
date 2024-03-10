@@ -22,9 +22,7 @@
         <x-nav-link href="{{ route('register') }}">
             {{ __('Зарегистрироваться') }}
         </x-nav-link>
-        <x-nav-link class="" href="{{ url()->previous() }}">
-        {{ __('Назад ') }}
-        </x-nav-link>
+
         </div>
 
     </x-authentication-card>

@@ -13,7 +13,7 @@
             <!-- Token Name -->
             <div class="col-span-6 sm:col-span-4">
                 <x-label for="name" value="{{ __('Имя токена') }}" />
-                <x-input id="name" type="text" class="mt-1 block w-full" wire:model="createApiTokenForm.name" autofocus />
+                <x-input id="name" type="text" class="mt-1 block w-full" wire:model="createApiTokenForm.name"/>
                 <x-input-error for="name" class="mt-2" />
             </div>
 
@@ -81,7 +81,7 @@
                                         </button>
                                     @endif
 
-                                    <button class="cursor-pointer ms-6 text-sm text-red-500" wire:click="confirmApiTokenDeletion({{ $token->id }})">
+                                    <button class="cursor-pointer ms-6 text-sm text-[#FF0015]" wire:click="confirmApiTokenDeletion({{ $token->id }})">
                                         {{ __('Удалить') }}
                                     </button>
                                 </div>

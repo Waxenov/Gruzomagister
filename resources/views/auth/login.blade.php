@@ -13,14 +13,14 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
-            <div>
-                <x-label for="email" value="{{ __('Почта') }}" />
-                <x-input id="email" class="block mt-1 w-full bg-[#EBE5E5] text-[#876368]" placeholder="mail@mail.ru" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+            <div class="mt-4">
+                <x-label for="email" value="{{ __('Электропочта') }}" />
+                <x-input id="email" class="block mt-1 w-full bg-[#EBE5E5] text-[#876368]" placeholder="электронная почта" type="email" name="email" :value="old('email')" required autocomplete="username" />
             </div>
 
             <div class="mt-4">
                 <x-label for="password" value="{{ __('Пароль') }}" />
-                <x-input id="password" class="block mt-1 w-full bg-[#EBE5E5] text-[#876368]" placeholder="••••••••••" type="password" name="password" required autocomplete="current-password" />
+                <x-input id="password" class="block mt-1 w-full bg-[#EBE5E5] text-[#876368]" placeholder="секретные символы" type="password" name="password" required autocomplete="current-password" />
             </div>
 
             <div class="block mt-4">
@@ -32,10 +32,13 @@
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF0015]" href="{{ route('password.request') }}">
+                    <a class="px-10 underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF0015]" href="{{ route('password.request') }}">
                         {{ __('Забыли пароль?') }}
                     </a>
                 @endif
+                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF0015]" href="{{ route('register') }}">
+                        {{ __('Нет аккаунта?') }}
+                    </a>
 
                 <x-button class="ms-4">
                     {{ __('Войти') }}
