@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CarrierController;
 
 //общедоступные маршруты
 Route::middleware([])->group(function () {
@@ -53,7 +54,7 @@ Route::middleware([])->group(function () {
     })->name('mediator');
 });
 
-//даршруты для авторизированных пользователей
+//маршруты для авторизированных пользователей
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -64,7 +65,7 @@ Route::middleware([
     Route::get('/orders', [OrdersController::class, 'showOrders'],)->name('orders');
 
     //перевозчики
-    Route::get('/carriers', function () {
+    Route::get('/carriers', [CarrierController::class, 'showCarriers'], function () {
         return view('carriers');
     })->name('carriers');
 

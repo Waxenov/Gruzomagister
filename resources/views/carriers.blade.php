@@ -27,7 +27,11 @@
             <!-- поиск -->
             <div class="flex mx-auto mb-8">
                 <div class="relative flex-1">
-                    <input type="text" id="simple-search" class="block w-96 px-4 py-2.5 bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-[#FF0015] focus:border-[#FF0015] focus:outline-none" placeholder="Ищите и найдете">
+                    <form action="{{ route('carriers') }}" method="GET">
+                        <x-button type="submit" class="mb-2">Показать всех</x-button>
+                        <x-button type="submit" class="mb-2 mx-2">Поиск</x-button>
+                        <input type="text" name="search" class="block w-96 px-4 py-2.5 bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-[#FF0015] focus:border-[#FF0015] focus:outline-none" placeholder="Ищите и найдете">
+                    </form>
                 </div>
             </div>
 
@@ -38,7 +42,10 @@
                     <!-- столбцы таблицы -->
                     <thead class="text-xs text-center text-gray-700 uppercase bg-[#ededed]">
                         <tr>
-                            <th scope="col" class="px-6 py-3 rounded-tl-[15px]">
+                            <th scope="col" class="px-6 py-3 rounded-tl-[15px] bg-[#FF0015] text-white">
+                                Номер
+                            </th>
+                            <th scope="col" class="px-6 py-3">
                                 Фамилия
                             </th>
                             <th scope="col" class="px-6 py-3">
@@ -55,16 +62,20 @@
 
                     <!-- данные перевозчиков -->
                     <tbody>
+                        @foreach($carriers as $carrier)
                         <tr class="bg-[#ffffff] text-center border-b-2 border-b-[#EDE3E7]">
-                            <td class="px-6 py-4 text-[#606060]">Иванов</td>
-                            <td class="px-6 py-4 text-[#606060]">Иван</td>
-                            <td class="px-6 py-4 text-[#606060]">Иванович</td>
-                            <td class="px-6 py-4 text-[#FF5267]">+7 123 456 78 90</td>
+                            <td class="px-6 py-4 text-base font-black text-[#FF5267]">#{{ $carrier->id }}</td>
+                            <td class="px-6 py-4 text-[#606060]">{{ $carrier->surname }}</td>
+                            <td class="px-6 py-4 text-[#606060]">{{ $carrier->name }}</td>
+                            <td class="px-6 py-4 text-[#606060]">{{ $carrier->patronymic }}</td>
+                            <td class="px-6 py-4 text-base font-black text-[#FF5267]">{{ $carrier->phone }}</td>
                         </tr>
+                        @endforeach
 
                         <!-- конечная строчка -->
                         <tr class="bg-[#ffffff] text-center border-b-2 border-b-[#EDE3E7]">
-                            <td class="px-6 py-6 text-[#606060] rounded-bl-[15px] font-black text-xl"> ... </td>
+                            <td class="px-6 py-6 text-[#FF5267] rounded-bl-[15px] font-black text-xl"> ... </td>
+                            <td class="px-6 py-6 text-[#606060] font-black text-xl"> ... </td>
                             <td class="px-6 py-6 text-[#606060] font-black text-xl"> ... </td>
                             <td class="px-6 py-6 text-[#606060] font-black text-xl"> ... </td>
                             <td class="px-6 py-6 text-[#FF5267] rounded-br-[15px] font-black text-xl"> ... </td>
