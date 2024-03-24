@@ -7,25 +7,28 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link type="image/x-icon" rel="icon" href="/favicon.ico">
         
+        <!-- название -->
         <title>{{ config('app.name', 'ГрузоМагистр') }}</title>
 
-        <!-- Fonts -->
+        <!-- шрифты -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-        <!-- Scripts -->
+        <!-- скрипты -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-        <!-- Styles -->
+        <!-- стили -->
         @livewireStyles
     </head>
+
     <body class="min-w-min max-w-full font-sans antialiased bg-[#ece2e3] dark:bg-[#232323]">
         <x-banner />
 
         <div class="w-full bg-gray-100">
+
             @livewire('navigation-menu')
 
-            <!-- Page Heading -->
+            <!-- шапка -->
             @if (isset($header))
                 <header class="bg-white shadow">
                     <div class="w-full mx-auto py-6 px-4 sm:px-6 lg:px-8 ">
@@ -34,7 +37,7 @@
                 </header>
             @endif
 
-            <!-- Page Content -->
+            <!-- контент -->
             <main class="my-20">
                 {{ $slot }}
             </main>
@@ -44,7 +47,7 @@
 
         @livewireScripts
         
-
+            <!-- подвал -->
             <footer class="bg-white dark:bg-[#202020] flex bottom-0 w-full top-0 z-0">
                 <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                     <div class="md:flex md:justify-between">
@@ -63,8 +66,11 @@
                                 <li class="mb-4">
                                     <a href="https://livewire.laravel.com/" class="hover:underline">Livewire</a>
                                 </li>
-                                <li>
+                                <li class="mb-4">
                                     <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
+                                </li>
+                                <li>
+                                    <a href="https://nodejs.org/en/about" class="hover:underline">Node js</a>
                                 </li>
                             </ul>
                         </div>
@@ -98,12 +104,9 @@
                     <span class="text-sm text-gray-500 sm:text-center">© 2024 <a href="http://gruzomagister/" class="hover:underline">Грузомагистр</a>. Выпускная квалификационная работа. Не является рабочим проектом.
                     </span>
                     <div class="flex mt-4 sm:justify-center sm:mt-0">
-
                     </div>
                 </div>
                 </div>
             </footer>
-
-
     </body>
 </html>

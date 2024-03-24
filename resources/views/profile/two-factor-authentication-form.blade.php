@@ -1,12 +1,16 @@
 <x-action-section>
+
+    <!-- заголовок -->
     <x-slot name="title">
         {{ __('Двухфакторная аутентификация') }}
     </x-slot>
 
+    <!-- описание -->
     <x-slot name="description">
         {{ __('Обеспечьте дополнительную безопасность вашего аккаунта с двухфакторной аутентификацией.') }}
     </x-slot>
 
+    <!-- двухфакторная аутентификация -->
     <x-slot name="content">
         <h3 class="text-lg font-medium text-gray-900">
             @if ($this->enabled)
@@ -26,6 +30,7 @@
             </p>
         </div>
 
+        <!-- форма настройки двухфакторной аутентификации -->
         @if ($this->enabled)
             @if ($showingQrCode)
                 <div class="mt-4 max-w-xl text-sm text-gray-600">
@@ -38,16 +43,19 @@
                     </p>
                 </div>
 
+                <!-- QR-код для сканирования -->
                 <div class="mt-4 p-2 inline-block bg-white">
                     {!! $this->user->twoFactorQrCodeSvg() !!}
                 </div>
 
+                <!-- ключ настройки -->
                 <div class="mt-4 max-w-xl text-sm text-gray-600">
                     <p class="font-semibold">
                         {{ __('Установить ключ настройки') }}: {{ decrypt($this->user->two_factor_secret) }}
                     </p>
                 </div>
 
+                <!-- подтверждение паролем -->
                 @if ($showingConfirmation)
                     <div class="mt-4">
                         <x-label for="code" value="{{ __('Код') }}" />
@@ -61,6 +69,7 @@
                 @endif
             @endif
 
+            <!-- коды восстановления -->
             @if ($showingRecoveryCodes)
                 <div class="mt-4 max-w-xl text-sm text-gray-600">
                     <p class="font-semibold">
@@ -68,6 +77,7 @@
                     </p>
                 </div>
 
+                <!-- вывод кодов восстановления -->
                 <div class="grid gap-1 max-w-xl mt-4 px-4 py-4 font-mono text-sm bg-gray-100 rounded-lg">
                     @foreach (json_decode(decrypt($this->user->two_factor_recovery_codes), true) as $code)
                         <div>{{ $code }}</div>
@@ -76,7 +86,10 @@
             @endif
         @endif
 
+        <!-- кнопки управления -->
         <div class="mt-5">
+
+            <!-- включение/выключение -->
             @if (! $this->enabled)
                 <x-confirms-password wire:then="enableTwoFactorAuthentication">
                     <x-button type="button" wire:loading.attr="disabled">
@@ -84,6 +97,8 @@
                     </x-button>
                 </x-confirms-password>
             @else
+
+                <!-- показать/скрыть коды -->
                 @if ($showingRecoveryCodes)
                     <x-confirms-password wire:then="regenerateRecoveryCodes">
                         <x-secondary-button class="me-3">
@@ -104,6 +119,7 @@
                     </x-confirms-password>
                 @endif
 
+                <!-- отмена или скрытие -->
                 @if ($showingConfirmation)
                     <x-confirms-password wire:then="disableTwoFactorAuthentication">
                         <x-secondary-button wire:loading.attr="disabled">

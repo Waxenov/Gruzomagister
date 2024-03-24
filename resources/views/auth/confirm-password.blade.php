@@ -1,5 +1,7 @@
 <x-guest-layout>
     <x-authentication-card>
+
+        <!-- логотип -->
         <x-slot name="logo">
             <x-authentication-card-logo />
         </x-slot>
@@ -8,8 +10,10 @@
             {{ __('Подтвердите свой пароль, прежде чем продолжить.') }}
         </div>
 
+        <!-- сообщение об ошибках -->
         <x-validation-errors class="mb-4" />
 
+        <!-- форма для ввода пароля -->
         <form method="POST" action="{{ route('password.confirm') }}">
             @csrf
 
@@ -18,6 +22,7 @@
                 <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password"/>
             </div>
 
+            <!-- кнопка подтверждения -->
             <div class="flex justify-end mt-4">
                 <x-button class="ms-4">
                     {{ __('Потвердить') }}

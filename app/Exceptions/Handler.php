@@ -8,9 +8,7 @@ use Throwable;
 class Handler extends ExceptionHandler
 {
     /**
-     * The list of the inputs that are never flashed to the session on validation exceptions.
-     *
-     * @var array<int, string>
+     * список входных данных что никогда не передаются в в сеанс
      */
     protected $dontFlash = [
         'current_password',
@@ -19,7 +17,7 @@ class Handler extends ExceptionHandler
     ];
 
     /**
-     * Register the exception handling callbacks for the application.
+     * регистрация обратных вызовов исключений
      */
     public function register(): void
     {

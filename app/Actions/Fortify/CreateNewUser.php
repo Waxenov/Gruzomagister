@@ -13,13 +13,12 @@ class CreateNewUser implements CreatesNewUsers
     use PasswordValidationRules;
 
     /**
-     * Validate and create a newly registered user.
-     *
-     * @param  array<string, mixed>  $input
+     * сравнивает входные данные и создаёт нового пользователя.
      */
     public function create(array $input): User
     {
-        Validator::make($input, [
+        //сравнение данных из формы регистрации
+        Validator::make($input, [ 
             'surname' => ['required', 'string', 'max:255'],
             'name' => ['required', 'string', 'max:255'],
             'patronymic' => ['required', 'string', 'max:255'],
@@ -28,10 +27,11 @@ class CreateNewUser implements CreatesNewUsers
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
-            'role' => ['required', 'string', 'in:client,carrier'],
+            'role' => ['required', 'string', 'in:client,carrier'], //выбор роли Заказчик или Перевозчик
         ])->validate();
 
-        $user = User::create([
+        //назначение пользователю данных из формы регистрации
+        $user = User::create([ 
             'surname' => $input['surname'],
             'patronymic' => $input['patronymic'],
             'name' => $input['name'],
@@ -41,6 +41,7 @@ class CreateNewUser implements CreatesNewUsers
             'password' => Hash::make($input['password']),
         ]);
 
+        //назначение роли Заказчика или Перевозчика в зависимости от введенных данных
         if ($input['role'] === 'carrier') {
             $user->assignRole('carrier');
         } else {

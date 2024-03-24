@@ -8,17 +8,17 @@ use Illuminate\Support\Facades\Auth;
 
 class Formloadcomponent extends Component
 {
-    public $cargoType;
-    public $cargoDescribe;
-    public $weight;
-    public $readyDate;
-    public $loadPlace;
-    public $unloadPlace;
-    public $truckType;
+    public $cargoType;      //тип груза
+    public $cargoDescribe;  //описание груза
+    public $weight;         //вес груза
+    public $readyDate;      //дата готовности
+    public $loadPlace;      //место загрузки
+    public $unloadPlace;    //место разгрузки
+    public $truckType;      //тип кузова
 
     public function submitForm()
     {
-        $user = Auth::user();
+        $user = Auth::user(); //получение данных пользователя для записи в таблицу заказов
 
         formloadmodel::create([
             'cargo_type' => $this->cargoType,
@@ -34,7 +34,7 @@ class Formloadcomponent extends Component
             'phone' => $user->phone,
         ]);
 
-        return redirect()->route('orders');
+        return redirect()->route('orders'); //перенаправление на страницу заказов
     }
     public function render()
     {

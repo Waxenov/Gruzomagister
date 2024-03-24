@@ -6,16 +6,17 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link type="image/x-icon" rel="icon" href="/favicon.ico">
 
+        <!-- название -->
         <title>{{ config('app.name', 'ГрузоМагистр') }}</title>
 
-        <!-- Fonts -->
+        <!-- шрифты -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-        <!-- Scripts -->
+        <!-- скрипты -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-        <!-- Styles -->
+        <!-- стили -->
         @livewireStyles
     </head>
     <body class="font-sans antialiased">
@@ -24,12 +25,10 @@
             {{ $slot }}
         </div>
         
-
         @stack('modals')
-
         @livewireScripts
         
-
+        <!-- подвал -->
         <footer class="bg-white dark:bg-[#202020] flex bottom-0 w-full">
                 <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                     <div class="md:flex md:justify-between">
@@ -42,14 +41,17 @@
                         <div>
                             <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white uppercase">Разработка</h2>
                             <ul class="text-gray-500 font-medium">                                
-                                <li class="mb-4">
+                            <li class="mb-4">
                                     <a href="https://jetstream.laravel.com/introduction.html" class="hover:underline">Laravel Jetstream</a>
                                 </li>
                                 <li class="mb-4">
                                     <a href="https://livewire.laravel.com/" class="hover:underline">Livewire</a>
                                 </li>
-                                <li>
+                                <li class="mb-4">
                                     <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
+                                </li>
+                                <li>
+                                    <a href="https://nodejs.org/en/about" class="hover:underline">Node js</a>
                                 </li>
                             </ul>
                         </div>
@@ -83,7 +85,6 @@
                     <span class="text-sm text-gray-500 sm:text-center">© 2024 <a href="http://gruzomagister/" class="hover:underline">Грузомагистр</a>. Выпускная квалификационная работа. Не является рабочим проектом.
                     </span>
                     <div class="flex mt-4 sm:justify-center sm:mt-0">
-
                     </div>
                 </div>
                 </div>

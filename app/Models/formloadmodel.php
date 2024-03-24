@@ -9,19 +9,20 @@ class formloadmodel extends Model
 {
     use HasFactory;
     
-    protected $table = 'formcreate';
+    protected $table = 'formcreate'; //таблица в базе данных
 
     protected $fillable = [
-        'cargo_type',
-        'cargo_describe',
-        'weight',
-        'ready_date',
-        'load_place',
-        'unload_place',
-        'truck_type',
-        'surname',
-        'name',
-        'patronymic',
-        'phone',
+        'cargo_type',       //тип груза
+        'cargo_describe',   //описание груза
+        'weight',           //вес груза
+        'ready_date',       //дата готовности
+        'load_place',       //место загрузки
+        'unload_place',     //место разгрузки
+        'truck_type',       //тип кузова
+        'surname',          //фамилия
+        'name',             //имя
+        'patronymic',       //отчество
+        'phone',            //телефон
+        'id',               //номер пользователя
     ];
 }

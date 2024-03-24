@@ -12,19 +12,19 @@ class UpdateUserPassword implements UpdatesUserPasswords
     use PasswordValidationRules;
 
     /**
-     * Validate and update the user's password.
-     *
-     * @param  array<string, string>  $input
+     * валидация и обновление пароля пользователя.
      */
     public function update(User $user, array $input): void
     {
+        //валидация данных из $input
         Validator::make($input, [
-            'current_password' => ['required', 'string', 'current_password:web'],
+            'current_password' => ['required', 'string', 'current_password:web'], // пароль обязателен, строка, проверка
             'password' => $this->passwordRules(),
         ], [
             'current_password.current_password' => __('Указанный пароль не совпадает с текущим.'),
         ])->validateWithBag('updatePassword');
 
+        //автозаполнение данных пользователя
         $user->forceFill([
             'password' => Hash::make($input['password']),
         ])->save();
