@@ -12,14 +12,17 @@ export default {
     ],
 
     theme: {
-        darkMode: 'media',
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                maincraft: ['ChavaRegular'],
+                error: ['PerfectDOSVGA437'],
+                neutral: ['InvolveMedium'],
+                cursive: ['InvolveMediumOblique'],
+                titlecursive: ['InvolveBoldOblique'],
+                title: ['InvolveBold'],
             },
         },
     },
 
     plugins: [forms, typography],
 };
-
