@@ -1,72 +1,45 @@
-<svg id="fon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 487.5 60" {{ $attributes }}>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 321.41 77.43" {{ $attributes }}>
     <defs>
         <style>
             .cls-1 {
-                fill: #ff0040;
-            }
-
-            .cls-2,
-            .cls-5 {
-                fill: none;
-            }
-
-            .cls-2,
-            .cls-4 {
-                stroke: #000;
-            }
-
-            .cls-2,
-            .cls-3,
-            .cls-4,
-            .cls-5,
-            .cls-6 {
-                stroke-miterlimit: 10;
-                stroke-width: 6px;
-            }
-
-            .cls-3,
-            .cls-4,
-            .cls-6 {
                 fill: #fff;
             }
 
+            .cls-2 {
+                fill: #131313;
+            }
+
             .cls-3 {
-                stroke: #000015;
+                fill: #b00000;
             }
 
-            .cls-3,
-            .cls-4,
-            .cls-5,
-            .cls-6 {
-                stroke-linecap: square;
+            .cls-4 {
+                fill: #828282;
             }
 
-            .cls-5,
-            .cls-6 {
-                stroke: #ff0040;
+            .cls-5 {
+                fill: #1c1c1c;
             }
 
         </style>
     </defs>
-    <path d="M106.59,47V4.31h27V9.7H112V47Z" transform="translate(-2.5 -1.5)" />
-    <path d="M144.38,31.29h16.19V20.5H144V15.1h16.57v5.4H166V31.29h-5.4v5.4H144.38v10.8H139V15.1h5.4" transform="translate(-2.5 -1.5)" />
-    <path d="M171.36,47.49v-5.4H193v-5.4H176.76v-5.4h-5.4V15.1h5.4V31.29H193V15.1h5.4v27H193v5.4Z" transform="translate(-2.5 -1.5)" />
-    <polygon points="206.65 40.59 206.65 35.19 201.25 35.19 201.25 29.8 206.65 29.8 206.65 35.19 222.84 35.19 222.84 29.8 212.04 29.8 212.04 24.4 222.84 24.4 222.84 19 206.65 19 206.65 24.4 201.25 24.4 201.25 19 206.65 19 206.65 13.6 222.84 13.6 222.84 19 228.24 19 228.24 24.4 222.84 24.4 222.84 29.8 228.24 29.8 228.24 35.19 222.84 35.19 222.84 40.59 206.65 40.59" />
-    <path d="M241.53,42.09v-5.4h16.19V20.5H241.53V36.69h-5.4V20.5h5.4V15.1h16.19v5.4h5.4V36.69h-5.4v5.4Z" transform="translate(-2.5 -1.5)" />
-    <path class="cls-1" d="M268.52,47.09V4.31h5.4V9.7h5.39v5.4h5.4V9.7h5.4V4.31h5.4V47.09h-5.4v-32h-5.4v5.4h-5.4V15.1h-5.39v32Z" transform="translate(-2.5 -1.5)" />
-    <path class="cls-1" d="M306.3,42.09v-5.4h16.19v-5.4H306.3v5.4h-5.4v-5.4h5.4V25.9h16.19V20.5H306.3V15.1h16.19v5.4h5.4V42.09Z" transform="translate(-2.5 -1.5)" />
-    <path class="cls-1" d="M338.69,42.09v-27h21.59v5.4h-16.2V42.09Z" transform="translate(-2.5 -1.5)" />
-    <path class="cls-1" d="M365.67,42.09v-27h5.4V31.29h5.4V25.9h5.4V20.5h5.39V15.1h5.4v27h-5.4V25.9h-5.39v5.39h-5.4v5.4h-5.4v5.4Z" transform="translate(-2.5 -1.5)" />
-    <path class="cls-1" d="M403.46,42.09v-5.4h-5.4V20.5h5.4V15.1h16.19v5.4h5.4v5.4h-5.4V20.5H403.46V36.69h16.19v-5.4h5.4v5.4h-5.4v5.4Z" transform="translate(-2.5 -1.5)" />
-    <path class="cls-1" d="M441.24,42.09V20.5h-10.8V15.1h27v5.4h-10.8V42.09Z" transform="translate(-2.5 -1.5)" />
-    <path class="cls-1" d="M473.62,20.5m-5.4,10.79h16.2V20.5H468V15.1h16.42v5.4h5.4V31.29h-5.4v5.4h-16.2v10.8h-5.39V15.1h5.39" transform="translate(-2.5 -1.5)" />
-    <polyline id="text" class="cls-2" points="88 3 88 56 487.5 56.5" />
-    <polyline class="cls-3" points="3 57 3 57 59 57 59 57" />
-    <path class="cls-1" d="M28.24,6.9V23.1H22.85V6.9h5.39V1.51h36.2V6.9" transform="translate(-2.5 -1.5)" />
-    <polyline class="cls-1" points="5.5 26.7 5.5 21.3 56 21.3 56 26.7" />
-    <polyline class="cls-1" points="0.03 54.2 0.03 26.5 5.5 26.5 5.5 54.2" />
-    <polyline class="cls-4" points="59 57 59 3 59 3" />
-    <line class="cls-5" x1="73.5" y1="11.5" x2="73.5" y2="51.5" />
-    <line class="cls-2" x1="128.07" y1="5.5" x2="128.07" y2="13.5" />
-    <polyline class="cls-6" points="53.5 51.2 53.5 3 53.5 3" />
+    <path class="cls-1" d="M100.25,41.46h10.32V34.58H100V31.14h10.62v3.44H114v6.88h-3.44V44.9H100.25v6.88H96.81V31.14h3.44m3.44,3.44" transform="translate(-0.19 -1.14)" />
+    <path class="cls-1" d="M76,52V24.41H93.23v3.44H79.48V52Z" transform="translate(-0.19 -1.14)" />
+    <path class="cls-1" d="M117.37,51.78V48.34h13.76V44.9H120.81V41.46h-3.44V31.14h3.44V41.46h10.32V31.14h3.44v17.2h-3.44v3.44Z" transform="translate(-0.19 -1.14)" />
+    <path class="cls-1" d="M141.44,48.34V44.9H138V41.46h3.44V44.9h10.32V41.46h-6.88V38h6.88V34.58H141.44V38H138V34.58h3.44V31.14h10.32v3.44h3.44V38h-3.44v3.44h3.44V44.9h-3.44v3.44Z" transform="translate(-0.19 -1.14)" />
+    <path class="cls-1" d="M162.07,48.34V44.9h10.32V34.58H162.07V44.9h-3.43V34.58h3.43V31.14h10.32v3.44h3.44V44.9h-3.44v3.44Z" transform="translate(-0.19 -1.14)" />
+    <path class="cls-1" d="M180.61,51.92V24.41h3.44v3.44h3.44v3.44h3.44V27.85h3.44V24.41h3.43V51.92h-3.43V31.29h-3.44v3.44h-3.44V31.29h-3.44V51.92Z" transform="translate(-0.19 -1.14)" />
+    <path class="cls-1" d="M225.31,48.34V31.14h13.76v3.44H228.75V48.34Z" transform="translate(-0.19 -1.14)" />
+    <path class="cls-1" d="M242.51,48.34V31.14H246V41.46h3.43V38h3.44V34.58h3.44V31.14h3.44v17.2h-3.44V38h-3.44v3.44h-3.44V44.9H246v3.44Z" transform="translate(-0.19 -1.14)" />
+    <path class="cls-1" d="M266.58,48.34V44.9h-3.44V34.58h3.44V31.14h10.31v3.44h3.44V38h-3.44V34.58H266.58V44.9h10.31V41.46h3.44V44.9h-3.44v3.44Z" transform="translate(-0.19 -1.14)" />
+    <path class="cls-1" d="M290.65,48.34V34.58h-6.88V31.14H301v3.44h-6.87V48.34Z" transform="translate(-0.19 -1.14)" />
+    <path class="cls-1" d="M307.84,41.46h10.32V34.58H307.54V31.14h10.62v3.44h3.44v6.88h-3.44V44.9H307.84v6.88H304.4V31.14h3.44m3.44,3.44" transform="translate(-0.19 -1.14)" />
+    <path class="cls-1" d="M203.08,48.34V34.58h3.44v4.73h10.32V34.58H206.52V31.14h10.32v3.44h3.44V48.34h-3.44V42.75H206.52v5.59Z" transform="translate(-0.19 -1.14)" />
+    <g id="cube">
+        <path class="cls-1" d="M2.69,59.64V20.07L35.57,3.93,68.46,20.07V59.64L35.57,75.79Zm27.62,1.9V40.3L13.22,31.75V53.21Zm10.53,0,17.09-8.33V31.75L40.84,40.3ZM35.57,31.26l16-8-16-8.21-16,8.21Z" transform="translate(-0.19 -1.14)" />
+        <path class="cls-2" d="M35.57,6.71,66,21.63V58.09L35.57,73,5.19,58.09V21.63L35.57,6.71m0,27.35L57.12,23.28l-21.55-11L14,23.28,35.57,34.06m2.77,31.48L60.43,54.77V27.7L38.34,38.75V65.54m-5.53,0V38.75l-22.09-11V54.77L32.81,65.54m2.76-64.4-2.2,1.08L3,17.14.19,18.51V61.2L3,62.57,33.37,77.49l2.2,1.08,2.21-1.08L68.16,62.57,71,61.2V18.51l-2.8-1.37L37.78,2.22,35.57,1.14ZM25.1,23.23l10.47-5.37,10.48,5.37L35.57,28.47,25.1,23.23ZM15.72,51.65V35.79l12.09,6.05v15.7L15.72,51.65Zm27.62-9.81,12.09-6.05V51.65L43.34,57.54V41.84Z" transform="translate(-0.19 -1.14)" />
+    </g>
+    <polygon class="cls-3" points="13.28 21.94 35.52 11.06 56.88 22.18 35.17 33.06 13.28 21.94" />
+    <polygon class="cls-4" points="10.52 53.61 32.61 64.38 32.61 37.59 10.52 26.54 10.52 53.61" />
+    <polygon class="cls-5" points="38.16 37.59 38.16 64.38 60.26 53.61 60.26 26.54 38.16 37.59" />
 </svg>

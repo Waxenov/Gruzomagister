@@ -1,214 +1,179 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- таблица стилей -->
-    @vite('resources/css/app.css')
-
-    <!-- шрифты -->
-    <title>ГрузоМагистр</title>
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-</head>
-
-<body class="antialiased">
-
-    <!-- шапка -->
-    <div class="bg-white dark:bg-[#232323]">
-        <header class="absolute inset-x-0 top-0 z-50">
-
-            <!-- навигационное меню -->
-            <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-
-                <!-- логотип -->
-                <div class="flex lg:flex-1">
-                    <div class="shrink-0 flex items-center">
-                        <a href="{{ route('welcome') }}">
-                            <span class="sr-only">ГрузоМагистр</span>
-                            <x-application-mark class="block h-9 w-auto" />
-                        </a>
-                    </div>
-                </div>
-
-                <!-- кнопка входа -->
-                <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <a href="{{ route('login') }}" class="text-xl font-semibold leading-6 hover:text-gray-500 dark:text-white text-gray-900">Войти</a>
-                </div>
-            </nav>
-        </header>
-
-        <!-- основное содержимое страницы -->
-        <div class="relative isolate px-6 pt-14 lg:px-8">
-            
-            <!-- два блока с задним фоном и переходом в градиент -->
-            <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
-                <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff72ad] to-[#ff8b2d] opacity-50 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
-            </div>
-            <div class="absolute inset-x-0 transform-gpu overflow-hidden blur-3xl sm:top-40">
-                <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff72ad] to-[#ff821b] opacity-50 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
-            </div>
-
-            <!-- краткое описание проекта -->
-            <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-                <!-- ссылка на страницу "О нас" -->
-                <div class="hidden sm:mb-8 sm:flex sm:justify-center">
-                    <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 dark:text-gray-400 ring-1 ring-gray-900/10 dark:ring-gray-500/50 hover:ring-gray-900/20">
-                        Проект грузоперевозок в Омской области <a href="{{ route('about') }}" class=" font-semibold text-[#FF0015]"><span class="absolute inset-0" aria-hidden="true"></span> Узнать больше <span>&rarr;</span></a>
-                    </div>
-                </div>
-
-                <!-- заголовок и описание -->
+<x-app-layout>
+        <!-- welcome -->
+        <div class="flex justify-center items-center text-center relative isolate sm:px-6 lg:px-8 h-screen">
+            <div class="mx-auto max-w-3xl sm:max-w-6xl lg:text-center">
                 <div class="text-center">
-                    <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">Оптимизация ваших доставок с помощью наших грузовых услуг</h1>
-                    <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-400">Упростите процесс доставки и сделайте его более эффективным с помощью нашего сервиса. От начала до конца мы позаботимся обо всём, чтобы обеспечить безопасную доставку вашего груза</p>
-                    <!-- кнопка "Начать" -->
-                    <div class="absolute mx-64 mt-10 flex items-center justify-center gap-x-6">
-                        <a href="{{ route('dashboard') }}" class="rounded-md bg-[#FF0015] px-10 py-2.5 text-xl font-semibold text-white dark:text-[#232323] shadow-sm hover:bg-[#ff295b] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff295b]">Начать</a>
-                    </div>
+                    <h3 class="text-lg sm:text-2xl font-maincraft leading-7 text-[#b00000]">портал современных грузоперевозок</h3>
+                    <h1 class="text-4xl font-title tracking-tight text-[#1E1E1E] sm:text-6xl">
+                        Добро пожаловать в Грузомагистр
+                    </h1>
+                    <h2 class="mt-10 text-xl font-neutral tracking-tight sm:text-3xl leading-6 text-[#1E1E1E]">
+                        Это новый сервис для перевозки малогабаритного груза по Омску и области
+                    <h2 class="text-xl font-neutral tracking-tight sm:text-3xl leading-6 text-[#1E1E1E]">
+                        Мы поможем Вам сделать вашу жизнь комфортнее!
+                    </h2>
                 </div>
             </div>
         </div>
 
-        <!-- подробное описание проекта -->
-        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <!-- advantages -->
+        <div class="mx-auto max-w-7xl px-6 pt-52 lg:px-8 sm:h-screen">
 
-            <!-- заголовок и описание -->
-            <div class="mx-auto max-w-2xl lg:text-center">
-                <h2 class="text-base font-semibold leading-7 text-[#FF0015]">Быстрее! Выше! Сильнее!</h2>
-                <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Будущее грузоперевозок Омска</p>
-                <p class="mt-6 text-lg leading-8 text-gray-600">Инновационное решение для удобной и эффективной организации перевозок грузов в Омской области путем улучшения процесса совместной работы клиентов и исполнителей</p>
+            <div class="mx-auto max-w-2xl sm:max-w-6xl lg:text-center">
+                <h3 class="text-lg sm:text-2xl font-maincraft leading-7 text-[#FF9218]">Быстрее! Выше! Сильнее!</h3>
+                <h1 class="mt-2 text-3xl font-title tracking-tight text-[#1E1E1E] sm:text-5xl">Будущее грузоперевозок</h1>
             </div>
 
-            <!-- блоки с преимуществами -->
-            <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-                <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+            <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-6xl">
+                <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-6xl lg:grid-cols-2 lg:gap-y-16 lg:gap-x-16">
 
-                    <!-- преимущество 1 -->
+                    <!-- advantage 1 -->
                     <div class="relative pl-16">
-                        <dt class="text-base font-semibold leading-7 text-gray-900">
-                            <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-[#FF0015]">
-                                <h1 class="text-white text-2xl font-bold">+</h1>
+                        <dt class="sm:text-2xl text-xl text-[#FF9218] font-maincraft leading-7">
+                            <div
+                                class="absolute left-0 top-0 flex h-11 w-11 items-center justify-center border-dashed border-4 border-[#FF9218]">
+                                <svg class="w-[28px] h-[28px] text-[#FF9218]" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M5 13.17a3.001 3.001 0 0 0 0 5.66V20a1 1 0 1 0 2 0v-1.17a3.001 3.001 0 0 0 0-5.66V4a1 1 0 0 0-2 0v9.17ZM11 20v-9.17a3.001 3.001 0 0 1 0-5.66V4a1 1 0 1 1 2 0v1.17a3.001 3.001 0 0 1 0 5.66V20a1 1 0 1 1-2 0Zm6-1.17V20a1 1 0 1 0 2 0v-1.17a3.001 3.001 0 0 0 0-5.66V4a1 1 0 1 0-2 0v9.17a3.001 3.001 0 0 0 0 5.66Z" />
+                                </svg>
                             </div>
                             Удобство использования
                         </dt>
-                        <dd class="mt-2 text-base leading-7 text-gray-600">Проект предоставляет простой и интуитивно понятный интерфейс, который делает процесс заказа и выполнения перевозок максимально удобным для пользователей.</dd>
+                        <h2 class="mt-2 text-xl font-neutral leading-7 text-[#1E1E1E]">Проект предоставляет простой и интуитивно
+                            понятный интерфейс, который делает процесс заказа и выполнения перевозок максимально удобным
+                            для пользователей.</h2>
                     </div>
 
-                    <!-- преимущество 2 -->
+                    <!-- advantage 2 -->
                     <div class="relative pl-16">
-                        <dt class="text-base font-semibold leading-7 text-gray-900">
-                            <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-[#FF0015]">
-                                <h1 class="text-white text-2xl font-bold">+</h1>
+                        <dt class="sm:text-2xl text-xl text-[#FF9218] font-maincraft leading-7">
+                            <div
+                                class="absolute left-0 top-0 flex h-11 w-11 items-center justify-center border-dashed border-4 border-[#FF9218]">
+                                <svg class="w-[28px] h-[28px] text-[#FF9218]" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd"
+                                        d="M4.857 3A1.857 1.857 0 0 0 3 4.857v4.286C3 10.169 3.831 11 4.857 11h4.286A1.857 1.857 0 0 0 11 9.143V4.857A1.857 1.857 0 0 0 9.143 3H4.857Zm10 0A1.857 1.857 0 0 0 13 4.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 21 9.143V4.857A1.857 1.857 0 0 0 19.143 3h-4.286Zm-10 10A1.857 1.857 0 0 0 3 14.857v4.286C3 20.169 3.831 21 4.857 21h4.286A1.857 1.857 0 0 0 11 19.143v-4.286A1.857 1.857 0 0 0 9.143 13H4.857ZM18 14a1 1 0 1 0-2 0v2h-2a1 1 0 1 0 0 2h2v2a1 1 0 1 0 2 0v-2h2a1 1 0 1 0 0-2h-2v-2Z"
+                                        clip-rule="evenodd" />
+                                </svg>
                             </div>
-                            Эффективное управление ресурсами
+                            Эффективное управление
                         </dt>
-                        <dd class="mt-2 text-base leading-7 text-gray-600">Система помогает оптимизировать использование ресурсов, так как заказчики могут быстро найти подходящих перевозчиков, а перевозчики - находить заказы, соответствующие их возможностям и маршруту.</dd>
+                        <h2 class="mt-2 text-xl font-neutral leading-7 text-[#1E1E1E]">Система помогает оптимизировать
+                            использование ресурсов, так как заказчики могут быстро найти подходящих перевозчиков, а
+                            перевозчики - находить заказы, соответствующие их возможностям и маршруту.</h2>
                     </div>
 
-                    <!-- преимущество 3 -->
+                    <!-- advantage 3 -->
                     <div class="relative pl-16">
-                        <dt class="text-base font-semibold leading-7 text-gray-900">
-                            <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-[#FF0015]">
-                                <h1 class="text-white text-2xl font-bold">+</h1>
+                        <dt class="sm:text-2xl text-xl text-[#FF9218] font-maincraft leading-7">
+                            <div
+                                class="absolute left-0 top-0 flex h-11 w-11 items-center justify-center border-dashed border-4 border-[#FF9218]">
+                                <svg class="w-[28px] h-[28px] text-[#FF9218]" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd"
+                                        d="M12 6a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm-1.5 8a4 4 0 0 0-4 4 2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 4 4 0 0 0-4-4h-3Zm6.82-3.096a5.51 5.51 0 0 0-2.797-6.293 3.5 3.5 0 1 1 2.796 6.292ZM19.5 18h.5a2 2 0 0 0 2-2 4 4 0 0 0-4-4h-1.1a5.503 5.503 0 0 1-.471.762A5.998 5.998 0 0 1 19.5 18ZM4 7.5a3.5 3.5 0 0 1 5.477-2.889 5.5 5.5 0 0 0-2.796 6.293A3.501 3.501 0 0 1 4 7.5ZM7.1 12H6a4 4 0 0 0-4 4 2 2 0 0 0 2 2h.5a5.998 5.998 0 0 1 3.071-5.238A5.505 5.505 0 0 1 7.1 12Z"
+                                        clip-rule="evenodd" />
+                                </svg>
                             </div>
                             Улучшенное сотрудничество
                         </dt>
-                        <dd class="mt-2 text-base leading-7 text-gray-600">Проект создает прозрачную и эффективную коммуникацию между заказчиками и перевозчиками, что способствует оперативному выполнению заказов и уменьшению временных задержек.</dd>
+                        <h2 class="mt-2 text-xl font-neutral leading-7 text-[#1E1E1E]">Проект создает прозрачную и эффективную
+                            коммуникацию между заказчиками и перевозчиками, что способствует оперативному выполнению
+                            заказов.</h2>
                     </div>
 
-                    <!-- преимущество 4 -->
+                    <!-- advantage 4 -->
                     <div class="relative pl-16">
-                        <dt class="text-base font-semibold leading-7 text-gray-900">
-                            <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-[#FF0015]">
-                                <h1 class="text-white text-2xl font-bold">+</h1>
+                        <dt class="sm:text-2xl text-xl text-[#FF9218] font-maincraft leading-7">
+                            <div
+                                class="absolute left-0 top-0 flex h-11 w-11 items-center justify-center border-dashed border-4 border-[#FF9218]">
+                                <svg class="w-[28px] h-[28px] text-[#FF9218]" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd"
+                                        d="M12 4a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm-2.952.462c-.483.19-.868.432-1.19.71-.363.315-.638.677-.831.93l-.106.14c-.21.268-.36.418-.574.527C6.125 6.883 5.74 7 5 7a1 1 0 0 0 0 2c.364 0 .696-.022 1-.067v.41l-1.864 4.2a1.774 1.774 0 0 0 .821 2.255c.255.133.538.202.825.202h2.436a1.786 1.786 0 0 0 1.768-1.558 1.774 1.774 0 0 0-.122-.899L8 9.343V8.028c.2-.188.36-.38.495-.553.062-.079.118-.15.168-.217.185-.24.311-.406.503-.571a1.89 1.89 0 0 1 .24-.177A3.01 3.01 0 0 0 11 7.829V20H5.5a1 1 0 1 0 0 2h13a1 1 0 1 0 0-2H13V7.83a3.01 3.01 0 0 0 1.63-1.387c.206.091.373.19.514.29.31.219.532.465.811.78l.025.027.02.023v1.78l-1.864 4.2a1.774 1.774 0 0 0 .821 2.255c.255.133.538.202.825.202h2.436a1.785 1.785 0 0 0 1.768-1.558 1.773 1.773 0 0 0-.122-.899L18 9.343v-.452c.302.072.633.109 1 .109a1 1 0 1 0 0-2c-.48 0-.731-.098-.899-.2-.2-.12-.363-.293-.651-.617l-.024-.026c-.267-.3-.622-.7-1.127-1.057a5.152 5.152 0 0 0-1.355-.678 3.001 3.001 0 0 0-5.896.04Z"
+                                        clip-rule="evenodd" />
+                                </svg>
                             </div>
-                            Оптимизация выбора перевозчика
+                            Оптимизация статистики
                         </dt>
-                        <dd class="mt-2 text-base leading-7 text-gray-600">Пользователи имеют возможность сравнивать предложения от различных перевозчиков на основе статистики, отзывов и цен, что позволяет выбирать наилучшее решение для своих потребностей.</dd>
+                        <h2 class="mt-2 text-xl font-neutral leading-7 text-[#1E1E1E]">Пользователи имеют возможность сравнивать
+                            предложения от различных перевозчиков на основе статистики и отзывов, что позволяет узнать
+                            лучше исполнителя своих заказов.</h2>
                     </div>
                 </dl>
             </div>
-
-            <!-- блок с задним фоном и переходом в градиент -->
-            <div class="absolute inset-x-0 transform-gpu overflow-hidden blur-3xl -mt-96">
-                <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#22ffb5] to-[#1eff00] opacity-50 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
-            </div>
         </div>
 
-        <!-- описание работы сайта -->
-        <div class="mx-auto max-w-7xl px-6 lg:px-8 my-40">
+        <div class="mx-auto max-w-7xl px-6 pt-52 mb-20 lg:px-8 sm:h-screen">
 
-            <!-- заголовок и описание -->
             <div class="mx-auto max-w-2xl lg:text-center">
-                <h2 class=" text-base font-semibold leading-7 text-[#0dbdd4]">Как это работает?</h2>
-                <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Всё проще чем кажется</p>
-                <p class="mt-6 text-lg leading-8 text-gray-600">ГрузоМагистр ваш помощник в организации перевозок грузов. Здесь вы можете заказать перевозку или предложить свои услуги в качестве перевозчика. Мы предоставляем простую форму для заполнения заказа и удобный поиск перевозок. Получайте уведомления о новых заказах и следите за статусом своих грузов через SMS и Email. Исследуйте различные типы кузовов грузовых машин с помощью интерактивных 3D моделей.</p>
+                <h3 class="text-lg sm:text-2xl font-maincraft leading-7 text-[#228B22]">Как это работает?</h3>
+                <h1 class="mt-2 text-3xl font-title tracking-tight text-[#1E1E1E] sm:text-5xl">Всё проще чем кажется</h1>
             </div>
 
-            <!-- блок с действиями -->
-            <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-                <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+            <!-- actions -->
+            <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-6xl">
+                <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-6xl lg:grid-cols-2 lg:gap-y-16 lg:gap-x-16">
 
-                    <!-- действие 1 -->
+                    <!-- action 1 -->
                     <div class="relative pl-16">
-                        <dt class="text-base font-semibold leading-7 text-gray-900">
-                            <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-[#00d5ca]">
-                                <h1 class="text-white text-xl font-bold">1</h1>
+                        <dt class="sm:text-2xl text-xl font-maincraft leading-7 text-[#228B22]">
+                            <div
+                                class="absolute left-0 top-0 flex h-11 w-11 items-center justify-center border-dashed border-4 border-[#228B22]">
+                                <h3 class="text-[#228B22] text-3xl font-maincraft">1</h3>
                             </div>
-                            Заполнение формы заявки
+                            Создание заказа
                         </dt>
-                        <dd class="mt-2 text-base leading-7 text-gray-600">Заказчик заполняет простую форму, указывая данные о грузе, такие как вес, тип, комментарий к доставке, дата готовности к отправке, место загрузки и место доставки.</dd>
+                        <h2 class="mt-2 text-xl font-neutral leading-7 text-[#1E1E1E]">Заказчик заполняет простую форму, указывая
+                            данные о грузе, такие как вес, тип, комментарий к доставке, дата готовности к отправке,
+                            место отправки и место доставки.</h2>
                     </div>
 
-                    <!-- действие 2 -->
+                    <!-- action 2 -->
                     <div class="relative pl-16">
-                        <dt class="text-base font-semibold leading-7 text-gray-900">
-                            <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-[#00d5ca]">
-                                <h1 class="text-white text-xl font-bold">2</h1>
+                        <dt class="sm:text-2xl text-xl font-maincraft leading-7 text-[#228B22]">
+                            <div
+                                class="absolute left-0 top-0 flex h-11 w-11 items-center justify-center border-dashed border-4 border-[#228B22]">
+                                <h3 class="text-[#228B22] text-3xl font-maincraft">2</h3>
                             </div>
-                            Выбор перевозчика
+                            Принятие заказа
                         </dt>
-                        <dd class="mt-2 text-base leading-7 text-gray-600">Сформированная заявка отображается для перевозчиков, которые могут предложить свои услуги. Заказчик выбирает наилучшего перевозчика на основе предоставленной статистики, предложенной цены и других деталей.</dd>
+                        <h2 class="mt-2 text-xl font-neutral leading-7 text-[#1E1E1E]">Сформированная заявка отображается для
+                            перевозчиков, которые могут предложить свои услуги. Перевозчик выбирает заказ на основе
+                            предоставленных данных заказчика.</h2>
                     </div>
 
-                    <!-- действие 3 -->
+                    <!-- action 3 -->
                     <div class="relative pl-16">
-                        <dt class="text-base font-semibold leading-7 text-gray-900">
-                            <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-[#00d5ca]">
-                                <h1 class="text-white text-xl font-bold">3</h1>
+                        <dt class="sm:text-2xl text-xl font-maincraft leading-7 text-[#228B22]">
+                            <div
+                                class="absolute left-0 top-0 flex h-11 w-11 items-center justify-center border-dashed border-4 border-[#228B22]">
+                                <h3 class="text-[#228B22] text-3xl font-maincraft">3</h3>
                             </div>
-                            Обсуждение деталей
+                            Статус заказа
                         </dt>
-                        <dd class="mt-2 text-base leading-7 text-gray-600">Заказчик связывается с выбранным перевозчиком для обсуждения дополнительных деталей, уточнения условий доставки и заключения сделки.</dd>
+                        <h2 class="mt-2 text-xl font-neutral leading-7 text-[#1E1E1E]">Для большей уверенности в сохранности груза,
+                            заказчик может отслеживать статус заказа.</h2>
                     </div>
 
-                    <!-- действие 4 -->
+                    <!-- action 4 -->
                     <div class="relative pl-16">
-                        <dt class="text-base font-semibold leading-7 text-gray-900">
-                            <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-[#00d5ca]">
-                                <h1 class="text-white text-xl font-bold">4</h1>
+                        <dt class="sm:text-2xl text-xl font-maincraft leading-7 text-[#228B22]">
+                            <div
+                                class="absolute left-0 top-0 flex h-11 w-11 items-center justify-center border-dashed border-4 border-[#228B22]">
+                                <h3 class="text-[#228B22] text-3xl font-maincraft">4</h3>
                             </div>
-                            Выполнение доставки груза
+                            Доставка заказа
                         </dt>
-                        <dd class="mt-2 text-base leading-7 text-gray-600">Перевозчик забирает груз, осуществляет доставку по указанному маршруту и в срок, обеспечивая успешную доставку груза заказчику.</dd>
+                        <h2 class="mt-2 text-xl font-neutral leading-7 text-[#1E1E1E]">После того, как груз доставлен к месту
+                            назначения, перевозчик подтверждает выполнение заказа.</h2>
                     </div>
                 </dl>
             </div>
-
-            <!-- блок с задним фоном и переходом в градиент -->
-            <div class="absolute inset-x-0 transform-gpu overflow-hidden blur-3xl -mt-96">
-                <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#2cfff4] to-[#15ff15] opacity-50 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
-            </div>
-
-            <!-- кнопка "Попробовать" -->
-            <div class="absolute mx-[500px] mt-10 flex items-center justify-center gap-x-6">
-                <a href="{{ route('dashboard') }}" class="rounded-[15px] bg-transparent px-10 py-2.5 text-xl font-semibold text-gray-900 dark:text-white shadow-sm hover:bg-[#00d5ca] hover:text-white border-4 border-[#00d5ca] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#00ff9d]">Попробовать</a>
-            </div>
         </div>
-    </div>
-</body>
-</html>
+</x-app-layout>

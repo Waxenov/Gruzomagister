@@ -1,16 +1,16 @@
 <x-app-layout>
     <div class="max-h-full min-h-screen">
         <div class="max-w-fit mx-auto sm:px-6 lg:px-8">
-
+            
             <!-- заголовок страницы и описание -->
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
-                <h2 class="font-bold text-4xl text-[#1C1C1C]  leading-tight">
-                    {{ __('Ваши заказы') }}
+                <h2 class="font-bold text-4xl text-[#1C1C1C] leading-tight">
+                    {{ __('Детали заказов') }}
                     <br>
                 </h2>
                 <div class="text-[#828282]">
-                    <a href="{{ route('details') }}" class="hover:text-[#131313] inline-flex items-center text-4xl font-bold text-center py-4">
-                        {{ __('Детали заказов') }}
+                    <a href="{{ route('orders') }}" class="hover:text-[#131313] inline-flex items-center text-4xl font-bold text-center py-4">
+                        {{ __('Назад к заказам') }}
                     </a>
                 </div>
             </div>
@@ -18,44 +18,26 @@
             <!-- поиск -->
             <div class="flex mx-auto mb-10 items-end">
                 <div class="relative flex w-full h-fit">
-                    <form action="{{ route('orders') }}" method="GET" class="w-full flex flex-cols-2 gap-10">
+                    <form action="{{ route('carorders') }}" method="GET" class="w-full flex flex-cols-2 gap-10">
                         <div class="flex flex-cols-2 gap-4 max-w-full max-h-fit">
-                            <x-button type="submit" class="border-transparent px-5 text-[#B00000]">все</x-button>
+                            <x-button type="submit">все</x-button>
                             <x-input type="text" name="search" class="text-center w-full block px-4 text-xl focus:outline-none font-maincraft" autocomplete="off" placeholder="найдётся всё"></x-input>
-                            <x-button type="submit" class="border-transparent font-maincraft">поиск</x-button>
+                            <x-button type="submit">поиск</x-button>
                         </div>
                     </form>
                 </div>
-                <div class="grid grid-col-1 text-2xl font-maincraft text-[#828282]">
-
-                    <div class="w-fit flex justify-center items-center text-center">
-                        <x-status-pending-logo class="block h-5 w-5"/><span class="px-4">обработка</span>
-                    </div>
-
-                    <div class="w-fit flex justify-center items-center text-center">
-                        <x-status-confirmed-logo class="block h-7 w-7"/><span class="px-4">принят</span>
-                    </div>
-                    
-                    <div class="w-fit flex justify-center items-center">
-                        <x-status-traffic-logo class="block h-7 w-7"/><span class="px-4">в пути</span>
-                    </div>
-                    
-                    <div class="w-fit flex justify-center items-center">
-                        <x-status-delivered-logo class="block h-7 w-7"/><span class="px-4">доставлен</span>
-                    </div>
-                </div>
             </div>
 
-            <!-- таблица заказов -->
+            <!-- список заказов -->
             <div class="relative overflow-x-auto">
-                <table class="max-w-full min-w-screen text-lg text-[#1C1C1C]  font-normal">
+                <table class="max-w-full min-w-screen text-lg text-[#1C1C1C] font-normal">
                     <thead class="bg-[#FFFAFA] text-[#131313] lowercase text-xl text-center font-light font-maincraft leading-tight border-4 border-[#FAEEDD]">
                         <tr>
                             <th scope="col" class="px-8 py-4 font-maincraft bg-[#B00000] text-[#FAEEDD] text-xl uppercase font-light">
                                 ID
                             </th>
                             <th scope="col" class="px-4 py-4">
-                                создан
+                                заказчик
                             </th>
                             <th scope="col" class="px-4 py-4">
                                 тип
@@ -81,42 +63,43 @@
                             <th scope="col" class="px-4 py-4">
                                 статус
                             </th>
-                            <th scope="col" class="px-6 py-4 font-maincraft bg-[#B00000] text-[#FAEEDD] text-xl uppercase font-light">
-                                del
+                            <th scope="col" class="px-4 py-4 font-maincraft bg-[#B00000] text-[#FAEEDD] font-light">
+                                сменить
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        @if ($userOrders->isEmpty())
-                        <tr class="bg-[#131313] hover:bg-[#828282] font-maincraft text-xl text-center py-6 border-b-2 border-b-[#1C1C1C]">
+                        @if ($statusOrders->isEmpty())
+                        <tr class="bg-[#131313] hover:bg-[#1C1C1C] font-maincraft text-xl text-center py-6 border-b-2 border-b-[#1C1C1C]">
                             <td class="text-[#B00000] font-light text-2xl"> 0 </td>
-                            <td class="px-4 hover:bg-[#DBD7D2] "> ... </td>
-                            <td class="px-2 hover:bg-[#DBD7D2] "> ... </td>
-                            <td class="px-2 hover:bg-[#DBD7D2] "> ... </td>
-                            <td class="px-2 hover:bg-[#DBD7D2] "> ... </td>
-                            <td class="px-2 hover:bg-[#DBD7D2] "> ... </td>
-                            <td class="px-2 hover:bg-[#DBD7D2] "> ... </td>
-                            <td class="px-2 hover:bg-[#DBD7D2] "> ... </td>
-                            <td class="px-2 hover:bg-[#DBD7D2] "> ... </td>
-                            <td class="hover:bg-[#DBD7D2] "> ... </td>
+                            <td class="px-2 hover:bg-[#B00000]"> ... </td>
+                            <td class="px-2 hover:bg-[#B00000]"> ... </td>
+                            <td class="px-2 hover:bg-[#B00000]"> ... </td>
+                            <td class="px-2 hover:bg-[#B00000]"> ... </td>
+                            <td class="px-2 hover:bg-[#B00000]"> ... </td>
+                            <td class="px-2 hover:bg-[#B00000]"> ... </td>
+                            <td class="px-2 hover:bg-[#B00000]"> ... </td>
+                            <td class="px-2 hover:bg-[#B00000]"> ... </td>
+                            <td class="px-2 hover:bg-[#B00000]"> ... </td>
+                            <td class="hover:bg-[#B00000]"> ... </td>
                             <td> 
                                 <button type="button" class="text-[#B00000] hover:text-[#FAEEDD] font-maincraft text-4xl"> x </button>
                             </td>
                         </tr>
                         @else
                         <!-- вывод заказов заказчика -->
-                        @foreach($userOrders as $order)
+                        @foreach($statusOrders as $order)
                         <tr class="bg-[#FFFAFA] hover:bg-[#DBD7D2] text-center py-6 border-b-4 border-b-[#FAEEDD]">
                             <td class="text-[#B00000] font-light font-maincraft text-2xl">{{ $order->id }}</td>
-                            <td class="px-2 hover:bg-[#F5F5F5] ">{{ $order->created_at }}</td>
-                            <td class="px-2 hover:bg-[#F5F5F5] ">{{ $order->cargo_type }}</td>
-                            <td class="px-2 hover:bg-[#F5F5F5] ">{{ $order->cargo_describe }}</td>
-                            <td class="px-2 hover:bg-[#F5F5F5] ">{{ $order->weight }}</td>
-                            <td class="px-2 hover:bg-[#F5F5F5] ">{{ $order->ready_date }}</td>
-                            <td class="px-2 hover:bg-[#F5F5F5] ">{{ $order->load_place }}</td>
-                            <td class="px-2 hover:bg-[#F5F5F5] ">{{ $order->unload_place }}</td>
-                            <td class="px-2 hover:bg-[#F5F5F5] ">{{ $order->truck_type }}</td>
-                            <td class="hover:bg-[#F5F5F5]">
+                            <td class="px-2 hover:bg-[#F5F5F5]">{{ $order->surname }}<br>{{ $order->name }}<br>{{ $order->patronymic }}</td>
+                            <td class="px-2 hover:bg-[#F5F5F5]">{{ $order->cargo_type }}</td>
+                            <td class="px-2 hover:bg-[#F5F5F5]">{{ $order->cargo_describe }}</td>
+                            <td class="px-2 hover:bg-[#F5F5F5]">{{ $order->weight }}</td>
+                            <td class="px-2 hover:bg-[#F5F5F5]">{{ $order->ready_date }}</td>
+                            <td class="px-2 hover:bg-[#F5F5F5]">{{ $order->load_place }}</td>
+                            <td class="px-2 hover:bg-[#F5F5F5]">{{ $order->unload_place }}</td>
+                            <td class="px-2 hover:bg-[#F5F5F5]">{{ $order->truck_type }}</td>
+                            <td class="px-2 hover:bg-[#F5F5F5]">
                                 @if ($order->status === 'pending')
                                     <span class="flex items-center justify-center">
                                         <x-status-pending-logo class="block h-5 w-5"/>
@@ -139,13 +122,23 @@
                                     </span>
                                 @endif
                             </td>
-                            <td>
-                                <!-- кнопка удаления заказа -->
-                                <form action="{{ route('orders.destroy', $order->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="text-[#B00000] hover:text-[#FAEEDD] font-maincraft text-4xl"> x </button>
-                                </form>
+                            <td class="grid grid-col-1 text-2xl font-maincraft items-center text-center justify-between bg-[#131313]">
+                                @if ($order->status === 'confirmed')
+                                    <form method="POST" action="{{ route('orders.traffic', $order->id) }}">
+                                        @csrf
+                                        <button type="submit" class="w-fit text-2xl flex justify-center items-center tracking-widest text-[#FAEEDD]">
+                                        <x-status-confirmed-logo class="block h-7 w-7"/> - <x-status-traffic-logo class="block h-7 w-7"/>
+                                        </button>
+                                    </form>
+
+                                @elseif ($order->status === 'traffic')
+                                    <form method="POST" action="{{ route('orders.delivered', $order->id) }}">
+                                        @csrf
+                                        <button type="submit" class="w-fit text-2xl flex justify-center items-center tracking-widest text-[#FAEEDD]">
+                                        <x-status-traffic-logo class="block h-7 w-7 mr-2"/> - <x-status-delivered-logo class="block h-7 w-7"/>
+                                        </button>
+                                    </form>
+                                @endif
                             </td>
                         </tr>
                         @endforeach

@@ -1,56 +1,55 @@
 <x-guest-layout>
     <x-authentication-card>
-            <h1 class="flex justify-center text-2xl font-bold text-gray-900">{{ __('Вход в аккаунт') }}</h1>
-        
+        <h3 class="flex justify-center text-2xl sm:text-3xl font-title text-[#B00000]">{{ __('Авторизация') }}</h3>
+
         <!-- сообщение о ошибках -->
         <x-validation-errors class="mb-4" />
 
         <!-- проверка наличия сообщения об успешной операции -->
         @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                <!-- вывод сообщения об успешной операции -->
-                {{ session('status') }}
-            </div>
+        <div class="mb-4 font-medium text-sm text-green-600">
+            <!-- вывод сообщения об успешной операции -->
+            {{ session('status') }}
+        </div>
         @endif
 
         <!-- форма для ввода почты и пароля -->
-        <form method="POST" action="{{ route('login') }}">
+        <form method="POST" action="{{ route('login') }}" class="mt-8">
             @csrf
 
             <!-- почта -->
             <div class="mt-4">
-                <x-label for="email" value="{{ __('Электропочта') }}" />
-                <x-input id="email" class="block mt-1 w-full bg-[#EBE5E5] text-[#876368]" placeholder="электронная почта" type="email" name="email" :value="old('email')" required autocomplete="email" />
+                <x-label for="email" class="text-xl" value="{{ __('Электропочта') }}" />
+                <input id="email"
+                    class="block w-full bg-[#FFFAFA] rounded-[5px] text-[#B00000] font-neutral border-2 border-[#DCDCDC] focus:border-[#B00000] focus:bg-[#FAEEDD] focus:ring-[#B00000] shadow-sm"
+                    placeholder="электронная почта" type="email" name="email" :value="old('email')" required
+                    autocomplete="email" />
             </div>
 
             <!-- пароль -->
             <div class="mt-4">
-                <x-label for="password" value="{{ __('Пароль') }}" />
-                <x-input id="password" class="block mt-1 w-full bg-[#EBE5E5] text-[#876368]" placeholder="секретные символы" type="password" name="password" required autocomplete="current-password" />
+                <x-label for="password" class="text-xl" value="{{ __('Пароль') }}" />
+                <input id="password"
+                    class="block w-full bg-[#FFFAFA] rounded-[5px] text-[#B00000] font-neutral border-2 border-[#DCDCDC] focus:border-[#B00000] focus:bg-[#FAEEDD] focus:ring-[#B00000] shadow-sm"
+                    placeholder="секретный пароль" type="password" name="password" required
+                    autocomplete="current-password" />
             </div>
 
-            <!-- кнопка запоминания пользователя -->
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-checkbox id="remember_me" name="remember" />
-                    <span class="ms-2 text-sm text-gray-600">{{ __('Запомни меня') }}</span>
-                </label>
-            </div>
-
-            <!-- другие действия -->
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="px-10 underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF0015]" href="{{ route('password.request') }}">
+            <div class="py-4 font-neutral">
+                <div class="flex justify-between">
+                    <a class="text-base text-[#828282] hover:text-[#B00000]"
+                        href="{{ route('password.request') }}">
                         {{ __('Забыли пароль?') }}
                     </a>
-                @endif
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF0015]" href="{{ route('register') }}">
-                        {{ __('Нет аккаунта?') }}
+                    <a class="text-base text-[#B00000] hover:text-[#FF0015]" href="{{ route('register') }}">
+                        {{ __('Регистрация') }}
                     </a>
-
+                </div>
+            </div>
+            <div class="flex w-full">
                 <!-- кнопка войти -->
-                <x-button class="ms-4">
-                    {{ __('Войти') }}
+                <x-button class="flex justify-center text-center items-center w-full ms-0 border-4">
+                    {{ __('войти') }}
                 </x-button>
             </div>
         </form>

@@ -1,76 +1,37 @@
 <a href="/">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70.76 77.43">
+        <defs>
+            <style>
+                .cls-11 {
+                    fill: #fff;
+                }
 
-<svg id="fon" class="w-60 h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 487.5 60">
-    <defs>
-        <style>
-            .cls-1 {
-                fill: #ff0040;
-            }
+                .cls-22 {
+                    fill: #0d0d0d;
+                }
 
-            .cls-2,
-            .cls-5 {
-                fill: none;
-            }
+                .cls-33 {
+                    fill: #b00000;
+                }
 
-            .cls-2,
-            .cls-4 {
-                stroke: #000;
-            }
+                .cls-44 {
+                    fill: #828282;
+                }
 
-            .cls-2,
-            .cls-3,
-            .cls-4,
-            .cls-5,
-            .cls-6 {
-                stroke-miterlimit: 10;
-                stroke-width: 6px;
-            }
+                .cls-55 {
+                    fill: #1c1c1c;
+                }
 
-            .cls-3,
-            .cls-4,
-            .cls-6 {
-                fill: #fff;
-            }
+            </style>
+        </defs>
+        <g>
+            <path class="cls-11" d="M2.62,59.79V20.21L35.5,4.07,68.38,20.21V59.79L35.5,75.93Zm38.14,1.9,17.1-8.34V31.89l-17.1,8.55Zm-10.52,0V40.44l-17.1-8.55V53.35ZM35.5,31.4l16-8-16-8.21-16,8.21Z" transform="translate(-0.12 -1.29)" />
+            <path class="cls-22" d="M35.5,6.86,65.88,21.77V58.23L35.5,73.14,5.12,58.23V21.77L35.5,6.86m0,27.34L57,23.43l-21.54-11L14,23.43,35.5,34.2m2.76,31.49,22.1-10.78V27.85l-22.1,11V65.69m-5.52,0V38.9l-22.1-11V54.91l22.1,10.78M35.5,1.29,33.3,2.37,2.91,17.28.12,18.66V61.34l2.79,1.38L33.3,77.63l2.2,1.08,2.2-1.08L68.09,62.72l2.79-1.38V18.66l-2.79-1.38L37.7,2.37,35.5,1.29ZM25,23.37,35.5,18,46,23.37,35.5,28.61,25,23.37ZM43.26,42l12.1-6.05V51.79l-12.1,5.9V42Zm-27.62,9.8V35.94L27.74,42v15.7l-12.1-5.9Z" transform="translate(-0.12 -1.29)" />
+        </g>
+        <polygon class="cls-33" points="13.28 21.94 35.52 11.06 56.88 22.18 35.17 33.06 13.28 21.94" />
+        <polygon class="cls-44" points="10.52 53.61 32.61 64.38 32.61 37.59 10.52 26.54 10.52 53.61" />
+        <polygon class="cls-55" points="38.16 37.59 38.16 64.38 60.26 53.61 60.26 26.54 38.16 37.59" />
+    </svg>
 
-            .cls-3 {
-                stroke: #000015;
-            }
-
-            .cls-3,
-            .cls-4,
-            .cls-5,
-            .cls-6 {
-                stroke-linecap: square;
-            }
-
-            .cls-5,
-            .cls-6 {
-                stroke: #ff0040;
-            }
-
-        </style>
-    </defs>
-    <path d="M106.59,47V4.31h27V9.7H112V47Z" transform="translate(-2.5 -1.5)" />
-    <path d="M144.38,31.29h16.19V20.5H144V15.1h16.57v5.4H166V31.29h-5.4v5.4H144.38v10.8H139V15.1h5.4" transform="translate(-2.5 -1.5)" />
-    <path d="M171.36,47.49v-5.4H193v-5.4H176.76v-5.4h-5.4V15.1h5.4V31.29H193V15.1h5.4v27H193v5.4Z" transform="translate(-2.5 -1.5)" />
-    <polygon points="206.65 40.59 206.65 35.19 201.25 35.19 201.25 29.8 206.65 29.8 206.65 35.19 222.84 35.19 222.84 29.8 212.04 29.8 212.04 24.4 222.84 24.4 222.84 19 206.65 19 206.65 24.4 201.25 24.4 201.25 19 206.65 19 206.65 13.6 222.84 13.6 222.84 19 228.24 19 228.24 24.4 222.84 24.4 222.84 29.8 228.24 29.8 228.24 35.19 222.84 35.19 222.84 40.59 206.65 40.59" />
-    <path d="M241.53,42.09v-5.4h16.19V20.5H241.53V36.69h-5.4V20.5h5.4V15.1h16.19v5.4h5.4V36.69h-5.4v5.4Z" transform="translate(-2.5 -1.5)" />
-    <path class="cls-1" d="M268.52,47.09V4.31h5.4V9.7h5.39v5.4h5.4V9.7h5.4V4.31h5.4V47.09h-5.4v-32h-5.4v5.4h-5.4V15.1h-5.39v32Z" transform="translate(-2.5 -1.5)" />
-    <path class="cls-1" d="M306.3,42.09v-5.4h16.19v-5.4H306.3v5.4h-5.4v-5.4h5.4V25.9h16.19V20.5H306.3V15.1h16.19v5.4h5.4V42.09Z" transform="translate(-2.5 -1.5)" />
-    <path class="cls-1" d="M338.69,42.09v-27h21.59v5.4h-16.2V42.09Z" transform="translate(-2.5 -1.5)" />
-    <path class="cls-1" d="M365.67,42.09v-27h5.4V31.29h5.4V25.9h5.4V20.5h5.39V15.1h5.4v27h-5.4V25.9h-5.39v5.39h-5.4v5.4h-5.4v5.4Z" transform="translate(-2.5 -1.5)" />
-    <path class="cls-1" d="M403.46,42.09v-5.4h-5.4V20.5h5.4V15.1h16.19v5.4h5.4v5.4h-5.4V20.5H403.46V36.69h16.19v-5.4h5.4v5.4h-5.4v5.4Z" transform="translate(-2.5 -1.5)" />
-    <path class="cls-1" d="M441.24,42.09V20.5h-10.8V15.1h27v5.4h-10.8V42.09Z" transform="translate(-2.5 -1.5)" />
-    <path class="cls-1" d="M473.62,20.5m-5.4,10.79h16.2V20.5H468V15.1h16.42v5.4h5.4V31.29h-5.4v5.4h-16.2v10.8h-5.39V15.1h5.39" transform="translate(-2.5 -1.5)" />
-    <polyline id="text" class="cls-2" points="88 3 88 56 487.5 56.5" />
-    <polyline class="cls-3" points="3 57 3 57 59 57 59 57" />
-    <path class="cls-1" d="M28.24,6.9V23.1H22.85V6.9h5.39V1.51h36.2V6.9" transform="translate(-2.5 -1.5)" />
-    <polyline class="cls-1" points="5.5 26.7 5.5 21.3 56 21.3 56 26.7" />
-    <polyline class="cls-1" points="0.03 54.2 0.03 26.5 5.5 26.5 5.5 54.2" />
-    <polyline class="cls-4" points="59 57 59 3 59 3" />
-    <line class="cls-5" x1="73.5" y1="11.5" x2="73.5" y2="51.5" />
-    <line class="cls-2" x1="128.07" y1="5.5" x2="128.07" y2="13.5" />
-    <polyline class="cls-6" points="53.5 51.2 53.5 3 53.5 3" />
-</svg>
 
 </a>

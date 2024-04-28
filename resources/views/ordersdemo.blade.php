@@ -1,143 +1,153 @@
 <x-app-layout>
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="max-h-full min-h-screen">
+        <div class="max-w-fit mx-auto sm:px-6 lg:px-8">
 
-            <!-- заголовок страницы с описанием -->
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                <h2 class=" -mt-32 font-bold text-4xl text-gray-800 leading-tight">
+            <!-- заголовок страницы и описание -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
+                <h1 class="font-title text-4xl text-[#1E1E1E] leading-tight">
                     {{ __('Ваши заказы') }}
-                </h2>
-                <div class="md:ml-10">
-                    <h3 class="font-medium text-3xl text-[#876368] leading-tight">
-                        {{ __('Как это работает') }}
-                    </h3>
-                    <p class="font-normal text-xl text-[#876368] leading-tight mt-4">
-                        Ваши грузы теперь наши заказы<br>
-                        Дождитесь отклика перевозчика<br>
-                        И наконец уточните данные заказа<br>
-                        Если не любите ждать — <a class="font-medium text-xl text-[#876368] leading-tight mt-4" href="{{ route('carriers') }}">Перевозчики</a>
-                    </p>
+                    <br>
+                    <a href="{{ route('ordersdemoc') }}" class="text-[#696969] hover:font-titlecursive inline-flex items-center text-2xl font-title text-center py-4">
+                        {{ __('Заказы перевозчика?') }}
+                    </a>
+                </h1>
+                <div class="text-[#696969]">
+                    <a href="{{ route('detailsdemo') }}" class="hover:font-titlecursive inline-flex items-center text-4xl font-title text-center py-4">
+                        {{ __('Детали заказов') }}
+                    </a>
+                    
                 </div>
             </div>
 
             <!-- поиск -->
-            <div class="flex mx-auto mb-8">
-                <div class="relative flex-1">
-                    <input type="text" id="simple-search" class="block w-96 px-4 py-2.5 bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-[#FF0015] focus:border-[#FF0015] focus:outline-none" placeholder="Ищите и найдете">
+            <div class="flex mx-auto mb-10 items-end">
+                <div class="relative flex w-full h-fit">
+                    <form class="w-full flex flex-cols-2 gap-10">
+                        <div class="flex flex-cols-2 sm:gap-4 gap-2 max-w-full max-h-fit">
+                            <x-button type="submit">все</x-button>
+                            <x-input type="text" name="search" class="text-center w-full block px-4 text-xl focus:outline-none font-maincraft" autocomplete="off" placeholder="найдём"></x-input>
+                            <x-button type="submit">поиск</x-button>
+                        </div>
+                    </form>
                 </div>
             </div>
 
-            <!-- пример таблицы заказов -->
-            <div class="relative overflow-x-auto">
-                <table class="w-full  text-sm text-left rtl:text-right text-gray-500">
-
-                    <!-- столбцы таблицы -->
-                    <thead class="text-xs text-center text-gray-700 uppercase bg-[#ededed]">
+            <!-- таблица заказов -->
+            <div class="relative overflow-x-auto rounded-xl">
+                <table class="max-w-full min-w-screen text-lg text-[#1C1C1C]">
+                    <thead class="bg-[#FFFAFA] text-[#131313] lowercase text-xl text-center font-light font-maincraft leading-tight border-b-4 border-[#DCDCDC]">
                         <tr>
-                            <th scope="col" class="px-6 py-3 rounded-tl-[15px] bg-[#FF0015] text-white">
-                                Номер
+                            <th scope="col" class="px-6 py-4 font-maincraft bg-[#B00000] text-[#FFFAFA] text-xl font-light">
+                                ID
                             </th>
-                            <th scope="col" class="px-6 py-3">
-                                Дата заказа
+                            <th scope="col" class="px-4 py-4 font-light">
+                                создан
                             </th>
-                            <th scope="col" class="px-6 py-3">
-                                Тип груза
+                            <th scope="col" class="px-4 py-4 font-light">
+                                тип
                             </th>
-                            <th scope="col" class="px-6 py-3">
-                                Описание
+                            <th scope="col" class="px-4 py-4 font-light">
+                                описание
                             </th>
-                            <th scope="col" class="px-6 py-3">
-                                Вес
+                            <th scope="col" class="px-4 py-4 font-light">
+                                вес
                             </th>
-                            <th scope="col" class="px-6 py-3">
-                                Дата готовности
+                            <th scope="col" class="px-10 py-4 font-light">
+                                готов
                             </th>
-                            <th scope="col" class="px-6 py-3">
-                                Место загрузки
+                            <th scope="col" class="px-4 py-4 font-light">
+                                отправка
                             </th>
-                            <th scope="col" class="px-6 py-3">
-                                Место разгрузки
+                            <th scope="col" class="px-4 py-4 font-light">
+                                доставка
                             </th>
-                            <th scope="col" class="px-6 py-3">
-                                Тип кузова
+                            <th scope="col" class="px-4 py-4 font-light">
+                                кузов
                             </th>
-                            <th scope="col" class="px-6 py-3 rounded-tr-[15px] bg-[#FF0015] text-white">
-                                Удалить
+                            <th scope="col" class="px-4 py-4 font-light">
+                                статус
+                            </th>
+                            <th scope="col" class="px-4 py-4 font-maincraft bg-[#B00000] text-[#FFFAFA] text-xl font-light">
+                                del
                             </th>
                         </tr>
                     </thead>
-
-                    <!-- содержимое таблицы -->
                     <tbody>
-                        <tr class="bg-[#ffffff] text-center border-b-2 border-b-[#EDE3E7]">
-                            <td class="px-6 py-4 text-[#FF5267]">#000 </td>
-                            <td class="px-6 py-4 text-[#606060]"> 2024-00-00 12:12:12 </td>
-                            <td class="px-6 py-4 text-[#606060]"> Строительный </td>
-                            <td class="px-6 py-4 text-[#606060]"> Пеноблоки </td>
-                            <td class="px-6 py-4 text-[#606060]"> 100.00 </td>
-                            <td class="px-6 py-4 text-[#606060]"> 2024-00-00 </td>
-                            <td class="px-6 py-4 text-[#606060]"> Пункт А </td>
-                            <td class="px-6 py-4 text-[#606060]"> Пункт Б </td>
-                            <td class="px-6 py-4 text-[#606060]"> Открытый </td>
-                            <td class="px-6 py-4 text-[#FF5267]">
-                                <button type="button" class="text-white bg-[#FF5267] font-black rounded-full text-sm px-7 py-2.5 text-center me-2 mb-2"> X </button>
+                        <tr class="bg-[#FFFAFA] hover:bg-[#DCDCDC] font-neutral text-center py-6">
+                            <td><a href="{{ route('idorderdemo') }}" class="text-[#B00000] hover:text-[#FFFAFA] font-light font-maincraft text-2xl"> 1 </a></td>
+                            <td class="px-2 hover:bg-[#FFFAFA] "> 2024-00-00 00:00:00 </td>
+                            <td class="px-2 hover:bg-[#FFFAFA] "> Строительный </td>
+                            <td class="px-2 hover:bg-[#FFFAFA] "> Пеноблоки </td>
+                            <td class="px-2 hover:bg-[#FFFAFA] "> 100.00 </td>
+                            <td class="px-2 hover:bg-[#FFFAFA] "> 2024-00-00 </td>
+                            <td class="px-2 hover:bg-[#FFFAFA] "> Пункт А </td>
+                            <td class="px-2 hover:bg-[#FFFAFA] "> Пункт Б </td>
+                            <td class="px-2 hover:bg-[#FFFAFA] "> Открытый </td>
+                            <td class="hover:bg-[#FFFAFA]">
+                                <span class="flex items-center justify-center">
+                                    <x-status-pending-logo class="block h-5 w-5"/>
+                                </span>
+                            </td>
+                            <td class="hover:bg-[#B00000]">
+                                <button type="button" class="inline-flex px-2 pb-1 items-center font-maincraft text-4xl text-[#B00000] tracking-widest hover:text-[#FFFAFA] hover:bg-[#B00000]">×</button>
                             </td>
                         </tr>
-                        <tr class="bg-[#ffffff] text-center border-b-2 border-b-[#EDE3E7]">
-                            <td class="px-6 py-4 text-[#FF5267]">#000 </td>
-                            <td class="px-6 py-4 text-[#606060]"> 2024-00-00 12:12:12 </td>
-                            <td class="px-6 py-4 text-[#606060]"> Товары для дома </td>
-                            <td class="px-6 py-4 text-[#606060]"> Люстра, батареи, вывеска </td>
-                            <td class="px-6 py-4 text-[#606060]"> 100.00 </td>
-                            <td class="px-6 py-4 text-[#606060]"> 2024-00-00 </td>
-                            <td class="px-6 py-4 text-[#606060]"> Пункт А </td>
-                            <td class="px-6 py-4 text-[#606060]"> Пункт Б </td>
-                            <td class="px-6 py-4 text-[#606060]"> Закрытый </td>
-                            <td class="px-6 py-4 text-[#FF5267]">
-                                <button type="button" class="text-white bg-[#FF5267] font-black rounded-full text-sm px-7 py-2.5 text-center me-2 mb-2"> X </button>
+                        <tr class="bg-[#FFFAFA]  hover:bg-[#DCDCDC] font-neutral text-center py-6">
+                        <td><a href="{{ route('idorderdemo') }}" class="text-[#B00000] hover:text-[#FFFAFA] font-light font-maincraft text-2xl"> 2 </a></td>
+                            <td class="px-2 hover:bg-[#FFFAFA] "> 2024-00-00 00:00:00 </td>
+                            <td class="px-2 hover:bg-[#FFFAFA] "> Товары для дома </td>
+                            <td class="px-2 hover:bg-[#FFFAFA] "> Люстра, батареи, вывеска </td>
+                            <td class="px-2 hover:bg-[#FFFAFA] "> 100.00 </td>
+                            <td class="px-2 hover:bg-[#FFFAFA] "> 2024-00-00 </td>
+                            <td class="px-2 hover:bg-[#FFFAFA] "> Пункт А </td>
+                            <td class="px-2 hover:bg-[#FFFAFA] "> Пункт Б </td>
+                            <td class="px-2 hover:bg-[#FFFAFA] "> Закрытый </td>
+                            <td class="hover:bg-[#FFFAFA]">
+                                <span class="flex items-center justify-center">
+                                    <x-status-confirmed-logo class="block h-7 w-7"/>
+                                </span>
+                            </td>
+                            <td class="hover:bg-[#B00000]">
+                                <button type="button" class="inline-flex px-2 pb-1 items-center font-maincraft text-4xl text-[#B00000] tracking-widest hover:text-[#FFFAFA] hover:bg-[#B00000]">×</button>
                             </td>
                         </tr>
-                        <tr class="bg-[#ffffff] text-center border-b-2 border-b-[#EDE3E7]">
-                            <td class="px-6 py-4 text-[#FF5267]">#000 </td>
-                            <td class="px-6 py-4 text-[#606060]"> 2024-00-00 12:12:12 </td>
-                            <td class="px-6 py-4 text-[#606060]"> Мебель </td>
-                            <td class="px-6 py-4 text-[#606060]"> Комод, шкаф, сервант </td>
-                            <td class="px-6 py-4 text-[#606060]"> 100.00 </td>
-                            <td class="px-6 py-4 text-[#606060]"> 2024-00-00 </td>
-                            <td class="px-6 py-4 text-[#606060]"> Пункт А </td>
-                            <td class="px-6 py-4 text-[#606060]"> Пункт Б </td>
-                            <td class="px-6 py-4 text-[#606060]"> Открытый </td>
-                            <td class="px-6 py-4 text-[#FF5267]">
-                                <button type="button" class="text-white bg-[#FF5267] font-black rounded-full text-sm px-7 py-2.5 text-center me-2 mb-2"> X </button>
+                        <tr class="bg-[#FFFAFA]  hover:bg-[#DCDCDC] font-neutral text-center py-6">
+                        <td><a href="{{ route('idorderdemo') }}" class="text-[#B00000] hover:text-[#FFFAFA] font-light font-maincraft text-2xl"> 3 </a></td>
+                            <td class="px-2 hover:bg-[#FFFAFA] "> 2024-00-00 00:00:00 </td>
+                            <td class="px-2 hover:bg-[#FFFAFA] "> Мебель </td>
+                            <td class="px-2 hover:bg-[#FFFAFA] "> Комод, шкаф, сервант </td>
+                            <td class="px-2 hover:bg-[#FFFAFA] "> 100.00 </td>
+                            <td class="px-2 hover:bg-[#FFFAFA] "> 2024-00-00 </td>
+                            <td class="px-2 hover:bg-[#FFFAFA] "> Пункт А </td>
+                            <td class="px-2 hover:bg-[#FFFAFA] "> Пункт Б </td>
+                            <td class="px-2 hover:bg-[#FFFAFA] "> Открытый </td>
+                            <td class="hover:bg-[#FFFAFA]">
+                                <span class="flex items-center justify-center">
+                                    <x-status-traffic-logo class="block h-7 w-7"/>
+                                </span>
+                            </td>
+                            <td class="hover:bg-[#B00000]">
+                                <button type="button" class="inline-flex px-2 pb-1 items-center font-maincraft text-4xl text-[#B00000] tracking-widest hover:text-[#FFFAFA] hover:bg-[#B00000]">×</button>
                             </td>
                         </tr>
-                        <tr class="bg-[#ffffff] text-center border-b-2 border-b-[#EDE3E7]">
-                            <td class="px-6 py-4 text-[#FF5267]">#000 </td>
-                            <td class="px-6 py-4 text-[#606060]"> 2024-00-00 12:12:12 </td>
-                            <td class="px-6 py-4 text-[#606060]"> Электроника </td>
-                            <td class="px-6 py-4 text-[#606060]"> Компьютер, стиралка, сушилка </td>
-                            <td class="px-6 py-4 text-[#606060]"> 100.00 </td>
-                            <td class="px-6 py-4 text-[#606060]"> 2024-00-00 </td>
-                            <td class="px-6 py-4 text-[#606060]"> Пункт А </td>
-                            <td class="px-6 py-4 text-[#606060]"> Пункт Б </td>
-                            <td class="px-6 py-4 text-[#606060]"> Закрытый </td>
-                            <td class="px-6 py-4 text-[#FF5267]">
-                                <button type="button" class="text-white bg-[#FF5267] font-black rounded-full text-sm px-7 py-2.5 text-center me-2 mb-2"> X </button>
+                        <tr class="bg-[#FFFAFA]  hover:bg-[#DCDCDC] font-neutral text-center py-6">
+                        <td><a href="{{ route('idorderdemo') }}" class="text-[#B00000] hover:text-[#FFFAFA] font-light font-maincraft text-2xl"> 4 </a></td>
+                            <td class="px-2 hover:bg-[#FFFAFA]"> 2024-00-00 00:00:00 </td>
+                            <td class="px-2 hover:bg-[#FFFAFA]"> Электроника </td>
+                            <td class="px-2 hover:bg-[#FFFAFA]"> Компьютер, стиралка, сушилка </td>
+                            <td class="px-2 hover:bg-[#FFFAFA]"> 100.00 </td>
+                            <td class="px-2 hover:bg-[#FFFAFA]"> 2024-00-00 </td>
+                            <td class="px-2 hover:bg-[#FFFAFA]"> Пункт А </td>
+                            <td class="px-2 hover:bg-[#FFFAFA]"> Пункт Б </td>
+                            <td class="px-2 hover:bg-[#FFFAFA]"> Открытый </td>
+                            <td class="hover:bg-[#FFFAFA]">
+                                <span class="flex items-center justify-center">
+                                    <x-status-delivered-logo class="block h-6 w-6"/>
+                                </span>
                             </td>
-                        </tr>
-
-                        <!-- конечная строчка -->
-                        <tr class="bg-[#ffffff] text-center border-b-2 border-b-[#EDE3E7]">
-                            <td class="px-6 py-6 text-[#FF5267] rounded-bl-[15px] font-black text-xl"> ... </td>
-                            <td class="px-6 py-6 text-[#606060] font-black text-xl"> ... </td>
-                            <td class="px-6 py-6 text-[#606060] font-black text-xl"> ... </td>
-                            <td class="px-6 py-6 text-[#606060] font-black text-xl"> ... </td>
-                            <td class="px-6 py-6 text-[#606060] font-black text-xl"> ... </td>
-                            <td class="px-6 py-6 text-[#606060] font-black text-xl"> ... </td>
-                            <td class="px-6 py-6 text-[#606060] font-black text-xl"> ... </td>
-                            <td class="px-6 py-6 text-[#606060] font-black text-xl"> ... </td>
-                            <td class="px-6 py-6 text-[#606060] font-black text-xl"> ... </td>
-                            <td class="px-6 py-6 text-[#FF5267] rounded-br-[15px] font-black text-xl"> ... </td>
+                            <td class="hover:bg-[#B00000]">
+                                <button type="button" class="inline-flex px-2 pb-1 items-center font-maincraft text-4xl text-[#B00000] tracking-widest hover:text-[#FFFAFA] hover:bg-[#B00000]">×</button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
