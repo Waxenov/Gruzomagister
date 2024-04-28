@@ -2,6 +2,195 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: ChavaRegular;
+    src: url("/resources/fonts/ChavaRegular.ttf") format("truetype"); 
+}
+
+@font-face {
+    font-family: PerfectDOSVGA437;
+    src: url("/resources/fonts/PerfectDOSVGA437.ttf") format("truetype"); 
+}
+
+@font-face {
+    font-family: InvolveMedium;
+    src: url("/resources/fonts/InvolveMedium.ttf") format("truetype"); 
+}
+
+@font-face {
+    font-family: InvolveMediumOblique;
+    src: url("/resources/fonts/InvolveMediumOblique.ttf") format("truetype");  
+}
+
+@font-face {
+    font-family: InvolveBold;
+    src: url("/resources/fonts/InvolveBold.ttf") format("truetype"); 
+}
+
+@font-face {
+    font-family: InvolveBoldOblique;
+    src: url("/resources/fonts/InvolveBoldOblique.ttf") format("truetype"); 
+}
+
 [x-cloak] {
     display: none;
+}
+
+/* 
+#FF0000   Красный                 акцент / фон
+#B00000   Бордо                   акцент / фон
+#F64A8A   Французский розовый     акцент
+#FF9218   Последний вздох жако    акцент
+#30BA8F   Горный луг              акцент
+#228B22   Лесной зеленый          акцент
+#6495ED   Васильковый             акцент
+#909090   Телегрей                малый текст
+#696969   Тусклый серый           малый текст
+#DCDCDC   Гейнсборо               малый текст / фон
+#FFFAFA   Белоснежный             фон
+#EBC2AF   Циннвальдит             фон
+#DBD7D2   Лесной волк           фон
+#FAEEDD   Бедра испуганной нимфы  большой текст / фон
+#1E1E1E   Транспортный черный     большой текст
+#131313   Почти черный            фон
+*/
+
+
+/* 
+    ЭЛЕМЕНТЫ ТЕМНОЙ ТЕМЫ
+*/
+
+.dark h1 {
+    color: #FAEEDD;
+}
+
+.dark h2 {
+    color: #909090;
+}
+
+.dark dd #advantage {
+    color: #909090;
+}
+
+.dark a:hover {
+    color: #FAEEDD;
+}
+
+.dark body {
+    background-color: #1E1E1E;
+}
+
+.dark footer {
+    background-color: #131313;
+}
+
+.dark nav{
+    background-color: #131313;
+}
+.dark div #logotxt {
+    color: #FAEEDD;
+}
+.dark div #dashboard {
+    background-color: #131313;
+}
+
+.dark div #news{
+    background-color: #131313;
+    border-color: #131313;
+}
+
+.dark div #map{
+    background-color: #131313;
+}
+
+.dark div #comment{
+    background-color: #131313;
+    border-color: #131313;
+}
+.dark div #card{
+    background-color: #131313;
+    border-color: #131313;
+}
+
+.dark div #project{
+    background-color: #1E1E1E;
+}
+.dark input {
+    background-color: #1E1E1E;
+    border-color: #131313;
+    color: #909090;
+}
+
+.dark input:focus {
+    background-color: #131313;
+}
+
+.dark button {
+    background-color: #131313;
+}
+
+.dark button:hover {
+    background-color: #1E1E1E;
+}
+
+.dark button:hover {
+    border-color: #B00000;
+}
+
+.dark button {
+    color: #B00000;
+}
+
+.dark button:hover {
+    color: #FAEEDD;
+}
+
+.dark table {
+    background-color: #131313;
+}
+
+.dark table thead {
+    border-color: #1E1E1E;
+}
+
+.dark table tr:first-child {
+    background-color: #FAEEDD;
+    color: #1E1E1E;
+}
+
+.dark table tr {
+    border: #1E1E1E;
+}
+
+.dark table td {
+    background-color: #131313;
+    color: #FAEEDD;
+}
+
+.dark table td:hover {
+    background-color: #131313;
+}
+
+.dark div #zag{
+    background-color: #131313;
+}
+
+.dark select{
+    background-color: #1E1E1E;
+    border-color: #131313;
+    color: #FAEEDD;
+}
+
+.dark label{
+    color: #FAEEDD;
+}
+
+.dark textarea{
+    border-color: #131313;
+    background-color: #1E1E1E;
+    color: #FAEEDD;
+}
+
+.dark nav-link{
+    color: #FAEEDD;
 }
