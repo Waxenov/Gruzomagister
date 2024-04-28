@@ -5,6 +5,7 @@ use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CarrierController;
 
+
 //общедоступные маршруты
 Route::middleware([])->group(function () {
 
@@ -23,25 +24,33 @@ Route::middleware([])->group(function () {
         return view('ordersdemo');
     })->name('ordersdemo');
 
-    //пример перевозчиков
-    Route::get('/carriersdemo', function () {
-        return view('carriersdemo');
-    })->name('carriersdemo');
+    Route::get('/ordersdemoc', function () {
+        return view('ordersdemoc');
+    })->name('ordersdemoc');
+
+    Route::get('/carordersdemo', function () {
+        return view('carordersdemo');
+    })->name('carordersdemo');
+
+    //пример деталей
+    Route::get('/detailsdemo', function () {
+        return view('detailsdemo');
+    })->name('detailsdemo');
+
+    //перевозчики
+    Route::get('/carriers', [CarrierController::class, 'showCarriers'], function () {
+        return view('carriers');
+    })->name('carriers');
 
     //пример создания
-    Route::get('/createdemo', function () {
-        return view('createdemo');
-    })->name('createdemo');
+    Route::get('/create', function () {
+        return view('create');
+    })->name('create');
 
     //о нас
     Route::get('/about', function () {
         return view('about');
     })->name('about');
-
-    //функции
-    Route::get('/faq', function () {
-        return view('faq');
-    })->name('faq');
 
     //тарифы
     Route::get('/tarif', function () {
@@ -52,6 +61,7 @@ Route::middleware([])->group(function () {
     Route::get('/mediator', function () {
         return view('mediator');
     })->name('mediator');
+
 });
 
 //маршруты для авторизированных пользователей
@@ -64,15 +74,15 @@ Route::middleware([
     //метод вывода заказов
     Route::get('/orders', [OrdersController::class, 'showOrders'],)->name('orders');
 
-    //перевозчики
-    Route::get('/carriers', [CarrierController::class, 'showCarriers'], function () {
-        return view('carriers');
-    })->name('carriers');
+    //детали заказа заказчику
+    Route::get('/details', [OrdersController::class, 'orderDetails'], function () {
+        return view('details');
+    })->name('details');
 
-    //создание
-    Route::get('/create', function () {
-        return view('create');
-    })->name('create');
+    //детали заказа перевозчику
+    Route::get('/carorders', [OrdersController::class, 'showStatusOrders'], function () {
+        return view('carorders');
+    })->name('carorders');
 
     //админ панель
     Route::get('/adminpanel', [UserController::class, 'showUsers'],function () {
@@ -84,7 +94,14 @@ Route::middleware([
 Route::middleware(['auth'])->group(function () {
     
     //метод вывода заказов
-    Route::get('/orders', [OrdersController::class, 'showOrders'])->name('orders');
+    Route::get('/orders', [OrdersController::class, 'showOrders'],)->name('orders');
+
+    //метод смены статуса заказа
+    Route::post('/orders/{id}/confirmed', [OrdersController::class, 'confirmed'])->name('orders.confirmed');
+
+    Route::post('/orders/{id}/traffic', [OrdersController::class, 'traffic'])->name('orders.traffic');
+
+    Route::post('/orders/{id}/delivered', [OrdersController::class, 'delivered'])->name('orders.delivered');
 
     //метод удаления заказов
     Route::delete('/orders/{id}', [OrdersController::class, 'destroy'])->name('orders.destroy');
