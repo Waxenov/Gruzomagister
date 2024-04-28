@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('formcreate', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_carrier')->nullable();
+            $table->enum('status', ['pending', 'confirmed', 'traffic', 'delivered'])->default('pending');
             $table->string('load_place');
             $table->string('unload_place');
             $table->string('cargo_type');
@@ -24,8 +26,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('patronymic');
             $table->string('phone');
-            $table->timestamps();
-            
+            $table->timestamp('confirmed_at')->nullable();
+            $table->timestamp('traffic_at')->nullable();
+            $table->timestamp('delivered_at')->nullable();
+            $table->timestamps();            
         });
     }
 
